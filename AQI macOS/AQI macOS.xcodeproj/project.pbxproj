@@ -1,0 +1,687 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8EE412D12D6E815FF35FA22E /* Pods_AQI_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F10A2BDE20FCCFECADE4F1 /* Pods_AQI_macOS.framework */; };
+		FA135F95226F10F30081A1D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA135F94226F10F30081A1D1 /* AppDelegate.swift */; };
+		FA135F99226F10F40081A1D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA135F98226F10F40081A1D1 /* Assets.xcassets */; };
+		FA135FA8226F10F40081A1D1 /* AQI_macOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA135FA7226F10F40081A1D1 /* AQI_macOSTests.swift */; };
+		FA135FB3226F10F50081A1D1 /* AQI_macOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA135FB2226F10F50081A1D1 /* AQI_macOSUITests.swift */; };
+		FA135FD1226F1A4A0081A1D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA135FD0226F1A4A0081A1D1 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA135FA4226F10F40081A1D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA135F89226F10F30081A1D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA135F90226F10F30081A1D1;
+			remoteInfo = "AQI macOS";
+		};
+		FA135FAF226F10F50081A1D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA135F89226F10F30081A1D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA135F90226F10F30081A1D1;
+			remoteInfo = "AQI macOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1426465564D270F092DBBB9C /* Pods-AQI macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AQI macOS.release.xcconfig"; path = "Target Support Files/Pods-AQI macOS/Pods-AQI macOS.release.xcconfig"; sourceTree = "<group>"; };
+		71F10A2BDE20FCCFECADE4F1 /* Pods_AQI_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AQI_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76EAAA32C98EB010D26FCD62 /* Pods-AQI macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AQI macOS.debug.xcconfig"; path = "Target Support Files/Pods-AQI macOS/Pods-AQI macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		FA135F91226F10F30081A1D1 /* AQI macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AQI macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA135F94226F10F30081A1D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA135F98226F10F40081A1D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA135F9D226F10F40081A1D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA135F9E226F10F40081A1D1 /* AQI_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AQI_macOS.entitlements; sourceTree = "<group>"; };
+		FA135FA3226F10F40081A1D1 /* AQI macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AQI macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA135FA7226F10F40081A1D1 /* AQI_macOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQI_macOSTests.swift; sourceTree = "<group>"; };
+		FA135FA9226F10F40081A1D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA135FAE226F10F50081A1D1 /* AQI macOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AQI macOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA135FB2226F10F50081A1D1 /* AQI_macOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQI_macOSUITests.swift; sourceTree = "<group>"; };
+		FA135FB4226F10F50081A1D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA135FD0226F1A4A0081A1D1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA135F8E226F10F30081A1D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EE412D12D6E815FF35FA22E /* Pods_AQI_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA135FA0226F10F40081A1D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA135FAB226F10F50081A1D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10B37095105CE0081AC926C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71F10A2BDE20FCCFECADE4F1 /* Pods_AQI_macOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E89D7DC53507F263748E88E4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				76EAAA32C98EB010D26FCD62 /* Pods-AQI macOS.debug.xcconfig */,
+				1426465564D270F092DBBB9C /* Pods-AQI macOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA135F88226F10F30081A1D1 = {
+			isa = PBXGroup;
+			children = (
+				FA135F93226F10F30081A1D1 /* AQI macOS */,
+				FA135FA6226F10F40081A1D1 /* AQI macOSTests */,
+				FA135FB1226F10F50081A1D1 /* AQI macOSUITests */,
+				FA135F92226F10F30081A1D1 /* Products */,
+				E89D7DC53507F263748E88E4 /* Pods */,
+				10B37095105CE0081AC926C3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FA135F92226F10F30081A1D1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA135F91226F10F30081A1D1 /* AQI macOS.app */,
+				FA135FA3226F10F40081A1D1 /* AQI macOSTests.xctest */,
+				FA135FAE226F10F50081A1D1 /* AQI macOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA135F93226F10F30081A1D1 /* AQI macOS */ = {
+			isa = PBXGroup;
+			children = (
+				FA135FC0226F11060081A1D1 /* Library */,
+				FA135FC1226F110C0081A1D1 /* Models */,
+				FA135FC4226F11200081A1D1 /* Views */,
+				FA135F94226F10F30081A1D1 /* AppDelegate.swift */,
+				FA135F98226F10F40081A1D1 /* Assets.xcassets */,
+				FA135FD0226F1A4A0081A1D1 /* Main.storyboard */,
+				FA135F9D226F10F40081A1D1 /* Info.plist */,
+				FA135F9E226F10F40081A1D1 /* AQI_macOS.entitlements */,
+			);
+			path = "AQI macOS";
+			sourceTree = "<group>";
+		};
+		FA135FA6226F10F40081A1D1 /* AQI macOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA135FA7226F10F40081A1D1 /* AQI_macOSTests.swift */,
+				FA135FA9226F10F40081A1D1 /* Info.plist */,
+			);
+			path = "AQI macOSTests";
+			sourceTree = "<group>";
+		};
+		FA135FB1226F10F50081A1D1 /* AQI macOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FA135FB2226F10F50081A1D1 /* AQI_macOSUITests.swift */,
+				FA135FB4226F10F50081A1D1 /* Info.plist */,
+			);
+			path = "AQI macOSUITests";
+			sourceTree = "<group>";
+		};
+		FA135FC0226F11060081A1D1 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		FA135FC1226F110C0081A1D1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		FA135FC4226F11200081A1D1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA135FC9226F16BC0081A1D1 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA135FC9226F16BC0081A1D1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA135F90226F10F30081A1D1 /* AQI macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA135FB7226F10F50081A1D1 /* Build configuration list for PBXNativeTarget "AQI macOS" */;
+			buildPhases = (
+				C64577B4E23FAC7401E6DA67 /* [CP] Check Pods Manifest.lock */,
+				FA135F8D226F10F30081A1D1 /* Sources */,
+				FA135F8E226F10F30081A1D1 /* Frameworks */,
+				FA135F8F226F10F30081A1D1 /* Resources */,
+				C43CF22F084838869FAB69BF /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AQI macOS";
+			productName = "AQI macOS";
+			productReference = FA135F91226F10F30081A1D1 /* AQI macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA135FA2226F10F40081A1D1 /* AQI macOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA135FBA226F10F50081A1D1 /* Build configuration list for PBXNativeTarget "AQI macOSTests" */;
+			buildPhases = (
+				FA135F9F226F10F40081A1D1 /* Sources */,
+				FA135FA0226F10F40081A1D1 /* Frameworks */,
+				FA135FA1226F10F40081A1D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA135FA5226F10F40081A1D1 /* PBXTargetDependency */,
+			);
+			name = "AQI macOSTests";
+			productName = "AQI macOSTests";
+			productReference = FA135FA3226F10F40081A1D1 /* AQI macOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FA135FAD226F10F50081A1D1 /* AQI macOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA135FBD226F10F50081A1D1 /* Build configuration list for PBXNativeTarget "AQI macOSUITests" */;
+			buildPhases = (
+				FA135FAA226F10F50081A1D1 /* Sources */,
+				FA135FAB226F10F50081A1D1 /* Frameworks */,
+				FA135FAC226F10F50081A1D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA135FB0226F10F50081A1D1 /* PBXTargetDependency */,
+			);
+			name = "AQI macOSUITests";
+			productName = "AQI macOSUITests";
+			productReference = FA135FAE226F10F50081A1D1 /* AQI macOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA135F89226F10F30081A1D1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Fernando Mata";
+				TargetAttributes = {
+					FA135F90226F10F30081A1D1 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					FA135FA2226F10F40081A1D1 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = FA135F90226F10F30081A1D1;
+					};
+					FA135FAD226F10F50081A1D1 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = FA135F90226F10F30081A1D1;
+					};
+				};
+			};
+			buildConfigurationList = FA135F8C226F10F30081A1D1 /* Build configuration list for PBXProject "AQI macOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA135F88226F10F30081A1D1;
+			productRefGroup = FA135F92226F10F30081A1D1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA135F90226F10F30081A1D1 /* AQI macOS */,
+				FA135FA2226F10F40081A1D1 /* AQI macOSTests */,
+				FA135FAD226F10F50081A1D1 /* AQI macOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA135F8F226F10F30081A1D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA135F99226F10F40081A1D1 /* Assets.xcassets in Resources */,
+				FA135FD1226F1A4A0081A1D1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA135FA1226F10F40081A1D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA135FAC226F10F50081A1D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C43CF22F084838869FAB69BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AQI macOS/Pods-AQI macOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Marshal/Marshal.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Marshal.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AQI macOS/Pods-AQI macOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C64577B4E23FAC7401E6DA67 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AQI macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA135F8D226F10F30081A1D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA135F95226F10F30081A1D1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA135F9F226F10F40081A1D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA135FA8226F10F40081A1D1 /* AQI_macOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA135FAA226F10F50081A1D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA135FB3226F10F50081A1D1 /* AQI_macOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA135FA5226F10F40081A1D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA135F90226F10F30081A1D1 /* AQI macOS */;
+			targetProxy = FA135FA4226F10F40081A1D1 /* PBXContainerItemProxy */;
+		};
+		FA135FB0226F10F50081A1D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA135F90226F10F30081A1D1 /* AQI macOS */;
+			targetProxy = FA135FAF226F10F50081A1D1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FA135FB5226F10F50081A1D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA135FB6226F10F50081A1D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		FA135FB8226F10F50081A1D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76EAAA32C98EB010D26FCD62 /* Pods-AQI macOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "AQI macOS/AQI_macOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ZXD9MWU3ZF;
+				INFOPLIST_FILE = "AQI macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mx.fernando.AQI-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		FA135FB9226F10F50081A1D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1426465564D270F092DBBB9C /* Pods-AQI macOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "AQI macOS/AQI_macOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ZXD9MWU3ZF;
+				INFOPLIST_FILE = "AQI macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mx.fernando.AQI-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		FA135FBB226F10F50081A1D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ZXD9MWU3ZF;
+				INFOPLIST_FILE = "AQI macOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mx.fernando.AQI-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AQI macOS.app/Contents/MacOS/AQI macOS";
+			};
+			name = Debug;
+		};
+		FA135FBC226F10F50081A1D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ZXD9MWU3ZF;
+				INFOPLIST_FILE = "AQI macOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mx.fernando.AQI-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AQI macOS.app/Contents/MacOS/AQI macOS";
+			};
+			name = Release;
+		};
+		FA135FBE226F10F50081A1D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ZXD9MWU3ZF;
+				INFOPLIST_FILE = "AQI macOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mx.fernando.AQI-macOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = "AQI macOS";
+			};
+			name = Debug;
+		};
+		FA135FBF226F10F50081A1D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = ZXD9MWU3ZF;
+				INFOPLIST_FILE = "AQI macOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mx.fernando.AQI-macOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_TARGET_NAME = "AQI macOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA135F8C226F10F30081A1D1 /* Build configuration list for PBXProject "AQI macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA135FB5226F10F50081A1D1 /* Debug */,
+				FA135FB6226F10F50081A1D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA135FB7226F10F50081A1D1 /* Build configuration list for PBXNativeTarget "AQI macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA135FB8226F10F50081A1D1 /* Debug */,
+				FA135FB9226F10F50081A1D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA135FBA226F10F50081A1D1 /* Build configuration list for PBXNativeTarget "AQI macOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA135FBB226F10F50081A1D1 /* Debug */,
+				FA135FBC226F10F50081A1D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA135FBD226F10F50081A1D1 /* Build configuration list for PBXNativeTarget "AQI macOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA135FBE226F10F50081A1D1 /* Debug */,
+				FA135FBF226F10F50081A1D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA135F89226F10F30081A1D1 /* Project object */;
+}
