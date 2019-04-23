@@ -13,6 +13,8 @@
 		FA135FA8226F10F40081A1D1 /* AQI_macOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA135FA7226F10F40081A1D1 /* AQI_macOSTests.swift */; };
 		FA135FB3226F10F50081A1D1 /* AQI_macOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA135FB2226F10F50081A1D1 /* AQI_macOSUITests.swift */; };
 		FA135FD1226F1A4A0081A1D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA135FD0226F1A4A0081A1D1 /* Main.storyboard */; };
+		FA135FD4226F1AE90081A1D1 /* AQI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA135FD2226F1AE90081A1D1 /* AQI.swift */; };
+		FA135FD5226F1AE90081A1D1 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA135FD3226F1AE90081A1D1 /* City.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		FA135FB2226F10F50081A1D1 /* AQI_macOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQI_macOSUITests.swift; sourceTree = "<group>"; };
 		FA135FB4226F10F50081A1D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA135FD0226F1A4A0081A1D1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FA135FD2226F1AE90081A1D1 /* AQI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AQI.swift; path = ../Models/AQI.swift; sourceTree = "<group>"; };
+		FA135FD3226F1AE90081A1D1 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = City.swift; path = ../Models/City.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,8 @@
 		FA135FC1226F110C0081A1D1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA135FD2226F1AE90081A1D1 /* AQI.swift */,
+				FA135FD3226F1AE90081A1D1 /* City.swift */,
 			);
 			name = Models;
 			path = "New Group";
@@ -370,6 +376,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA135F95226F10F30081A1D1 /* AppDelegate.swift in Sources */,
+				FA135FD4226F1AE90081A1D1 /* AQI.swift in Sources */,
+				FA135FD5226F1AE90081A1D1 /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
