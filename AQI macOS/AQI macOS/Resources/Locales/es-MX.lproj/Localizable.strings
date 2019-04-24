@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  AQI macOS
+
+  Created by Fernando Mata on 4/24/19.
+  Copyright © 2019 Fernando Mata. All rights reserved.
+*/
+
+"Good" = "Buena";
+"Moderate" = "Moderada";
+"SensitiveGroups" = "Grupos Sensitivos";
+"Unhealthy" = "Dañina";
+"VeryUnhealthy" = "Muy Dañina";
+"Hazardous" = "Arriesgado";
