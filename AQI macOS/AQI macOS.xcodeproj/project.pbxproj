@@ -11,6 +11,7 @@
 		FA0241B822701A4D00FEE568 /* APIConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA0241B722701A4D00FEE568 /* APIConfig.plist */; };
 		FA0241BB227049C900FEE568 /* AQI.json in Resources */ = {isa = PBXBuildFile; fileRef = FA0241BA227049C900FEE568 /* AQI.json */; };
 		FA0241BE227049EE00FEE568 /* Search.json in Resources */ = {isa = PBXBuildFile; fileRef = FA0241BD227049EE00FEE568 /* Search.json */; };
+		FA0241C22270589F00FEE568 /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0241C12270589F00FEE568 /* StyleGuide.swift */; };
 		FA135F95226F10F30081A1D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA135F94226F10F30081A1D1 /* AppDelegate.swift */; };
 		FA135F99226F10F40081A1D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA135F98226F10F40081A1D1 /* Assets.xcassets */; };
 		FA135FA8226F10F40081A1D1 /* AQI_macOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA135FA7226F10F40081A1D1 /* AQI_macOSTests.swift */; };
@@ -47,6 +48,7 @@
 		FA0241B722701A4D00FEE568 /* APIConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIConfig.plist; sourceTree = "<group>"; };
 		FA0241BA227049C900FEE568 /* AQI.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AQI.json; sourceTree = "<group>"; };
 		FA0241BD227049EE00FEE568 /* Search.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Search.json; sourceTree = "<group>"; };
+		FA0241C12270589F00FEE568 /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
 		FA135F91226F10F30081A1D1 /* AQI macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AQI macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA135F94226F10F30081A1D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA135F98226F10F40081A1D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			children = (
 				FA0241B722701A4D00FEE568 /* APIConfig.plist */,
 				FA135FE12270148D0081A1D1 /* AQIService.swift */,
+				FA0241C12270589F00FEE568 /* StyleGuide.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA135FDF2270147F0081A1D1 /* City.swift in Sources */,
+				FA0241C22270589F00FEE568 /* StyleGuide.swift in Sources */,
 				FA135F95226F10F30081A1D1 /* AppDelegate.swift in Sources */,
 				FA135FE02270147F0081A1D1 /* AQI.swift in Sources */,
 				FA135FE22270148D0081A1D1 /* AQIService.swift in Sources */,
