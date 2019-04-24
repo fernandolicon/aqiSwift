@@ -1,0 +1,67 @@
+"aqi": 169,
+"idx": 1437,
+"attributions": [
+    {
+        "url": "http://www.semc.gov.cn/",
+        "name": "Shanghai Environment Monitoring Center(上海市环境监测中心)"
+    },
+    {
+        "url": "http://106.37.208.233:20035/emcpublish/",
+        "name": "China National Urban air quality real-time publishing platform (全国城市空气质量实时发布平台)"
+    },
+    {
+        "url": "https://china.usembassy-china.org.cn/embassy-consulates/shanghai/air-quality-monitor-stateair/",
+        "name": "U.S. Consulate Shanghai Air Quality Monitor"
+    },
+    {
+        "url": "https://waqi.info/",
+        "name": "World Air Quality Index Project"
+    }
+],
+"city": {
+    "geo": [
+        31.2047372,
+        121.4489017
+    ],
+    "name": "Shanghai (上海)",
+    "url": "https://aqicn.org/city/shanghai"
+},
+"dominentpol": "pm25",
+"iaqi": {
+    "co": {
+        "v": 16.3
+    },
+    "h": {
+        "v": 72.6
+    },
+    "no2": {
+        "v": 38.4
+    },
+    "o3": {
+        "v": 11.4
+    },
+    "pm10": {
+        "v": 80
+    },
+    "pm25": {
+        "v": 169
+    },
+    "so2": {
+        "v": 4.1
+    },
+    "t": {
+        "v": 24.2
+    },
+    "w": {
+        "v": 0.8
+    }
+},
+"time": {
+    "s": "2019-04-24 11:00:00",
+    "tz": "+08:00",
+    "v": 1556103600
+},
+"debug": {
+    "sync": "2019-04-24T12:30:30+09:00"
+}
+

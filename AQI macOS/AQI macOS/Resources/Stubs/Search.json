@@ -1,0 +1,342 @@
+[
+    {
+        "uid": 1437,
+        "aqi": "174",
+        "time": {
+            "tz": "+0800",
+            "stime": "2019-04-24 15:00:00",
+            "vtime": 1556089200
+        },
+        "station": {
+            "name": "Shanghai",
+            "geo": [
+                31.2047372,
+                121.4489017
+            ],
+            "url": "shanghai"
+        }
+    },
+    {
+        "uid": 1442,
+        "aqi": "161",
+        "time": {
+            "tz": "+0800",
+            "stime": "2019-04-24 15:00:00",
+            "vtime": 1556089200
+        },
+        "station": {
+            "name": "Shaoxing",
+            "geo": [
+                29.995762,
+                120.586109
+            ],
+            "url": "shaoxing"
+        }
+    },
+    {
+        "uid": 1240,
+        "aqi": "154",
+        "time": {
+            "tz": "+0800",
+            "stime": "2019-04-24 14:00:00",
+            "vtime": 1556085600
+        },
+        "station": {
+            "name": "Shanglan, Taiyuan",
+            "geo": [
+                38.0108,
+                112.434
+            ],
+            "url": "china/taiyuan/shanglan"
+        }
+    },
+    {
+        "uid": 543,
+        "aqi": "154",
+        "time": {
+            "tz": "+0800",
+            "stime": "2019-04-24 15:00:00",
+            "vtime": 1556089200
+        },
+        "station": {
+            "name": "Shanting EPA, Zaozhuang",
+            "geo": [
+                35.07083333,
+                117.4516667
+            ],
+            "url": "shandong/zaozhuang/shantingquhuanbaoju"
+        }
+    },
+    {
+        "uid": 7906,
+        "aqi": "149",
+        "time": {
+            "tz": "+0800",
+            "stime": "2019-04-24 15:00:00",
+            "vtime": 1556089200
+        },
+        "station": {
+            "name": "Shaoyang",
+            "geo": [
+                27.238893,
+                111.467791
+            ],
+            "url": "shaoyang"
+        }
+    },
+    {
+        "uid": 827,
+        "aqi": "132",
+        "time": {
+            "tz": "+0800",
+            "stime": "2019-04-24 15:00:00",
+            "vtime": 1556089200
+        },
+        "station": {
+            "name": "Shanxi Road , Nanjing",
+            "geo": [
+                32.07,
+                118.773611
+            ],
+            "url": "jiangsu/nanjing/shanxilu"
+        }
+    },
+    {
+        "uid": 1363,
+        "aqi": "128",
+        "time": {
+            "tz": "+0800",
+            "stime": "2019-04-24 15:00:00",
+            "vtime": 1556089200
+        },
+        "station": {
+            "name": "Shahepu, Chengdu",
+            "geo": [
+                30.63,
+                104.1113889
+            ],
+            "url": "china/chengdu/shahepu"
+        }
+    },
+    {
+        "uid": 1331,
+        "aqi": "112",
+        "time": {
+            "tz": "+0800",
+            "stime": "2019-04-24 15:00:00",
+            "vtime": 1556089200
+        },
+        "station": {
+            "name": "Shaping, Changsha",
+            "geo": [
+                28.3586,
+                112.9958
+            ],
+            "url": "china/changsha/shaping"
+        }
+    },
+    {
+        "uid": 1538,
+        "aqi": "80",
+        "time": {
+            "tz": "+0800",
+            "stime": "2019-04-24 15:00:00",
+            "vtime": 1556089200
+        },
+        "station": {
+            "name": "Shaoguan",
+            "geo": [
+                24.810403,
+                113.597522
+            ],
+            "url": "shaoguan"
+        }
+    },
+    {
+        "uid": 5852,
+        "aqi": "65",
+        "time": {
+            "tz": "+0800",
+            "stime": "2019-04-24 15:00:00",
+            "vtime": 1556089200
+        },
+        "station": {
+            "name": "Shangqiu",
+            "geo": [
+                34.414172,
+                115.65637
+            ],
+            "url": "shangqiu"
+        }
+    },
+    {
+        "uid": 4342,
+        "aqi": "53",
+        "time": {
+            "tz": "+0800",
+            "stime": "2019-04-24 15:00:00",
+            "vtime": 1556089200
+        },
+        "station": {
+            "name": "Shanwei",
+            "geo": [
+                22.786211,
+                115.375279
+            ],
+            "url": "shanwei"
+        }
+    },
+    {
+        "uid": 2564,
+        "aqi": "52",
+        "time": {
+            "tz": "+0800",
+            "stime": "2019-04-24 15:00:00",
+            "vtime": 1556089200
+        },
+        "station": {
+            "name": "Sham Shui Po, HongKong",
+            "geo": [
+                22.33003,
+                114.159173
+            ],
+            "url": "hongkong/sham-shui-po"
+        }
+    },
+    {
+        "uid": 1541,
+        "aqi": "46",
+        "time": {
+            "tz": "+0800",
+            "stime": "2019-04-24 15:00:00",
+            "vtime": 1556089200
+        },
+        "station": {
+            "name": "Shantou",
+            "geo": [
+                23.353299,
+                116.681838
+            ],
+            "url": "shantou"
+        }
+    },
+    {
+        "uid": 7883,
+        "aqi": "36",
+        "time": {
+            "tz": "+0800",
+            "stime": "2019-04-24 15:00:00",
+            "vtime": 1556089200
+        },
+        "station": {
+            "name": "Shangrao",
+            "geo": [
+                28.454863,
+                117.943433
+            ],
+            "url": "shangrao"
+        }
+    },
+    {
+        "uid": 1614,
+        "aqi": "30",
+        "time": {
+            "tz": "+0800",
+            "stime": "2019-04-24 14:00:00",
+            "vtime": 1556085600
+        },
+        "station": {
+            "name": "Shalu, Taiwan",
+            "geo": [
+                24.225628,
+                120.568794
+            ],
+            "url": "taiwan/shalu"
+        }
+    },
+    {
+        "uid": 2563,
+        "aqi": "23",
+        "time": {
+            "tz": "+0800",
+            "stime": "2019-04-24 15:00:00",
+            "vtime": 1556089200
+        },
+        "station": {
+            "name": "Sha Tin, HongKong",
+            "geo": [
+                22.376491,
+                114.184668
+            ],
+            "url": "hongkong/sha-tin"
+        }
+    },
+    {
+        "uid": 1629,
+        "aqi": "22",
+        "time": {
+            "tz": "+0800",
+            "stime": "2019-04-24 14:00:00",
+            "vtime": 1556085600
+        },
+        "station": {
+            "name": "Shanhua, Taiwan",
+            "geo": [
+                23.115097,
+                120.297142
+            ],
+            "url": "taiwan/shanhua"
+        }
+    },
+    {
+        "uid": 5918,
+        "aqi": "20",
+        "time": {
+            "tz": "-0500",
+            "stime": "2019-04-24 01:00:00",
+            "vtime": 1556085600
+        },
+        "station": {
+            "name": "Shawinigan",
+            "geo": [
+                46.5618559,
+                -72.7435254
+            ],
+            "url": "shawinigan"
+        }
+    },
+    {
+        "uid": 90,
+        "aqi": "14",
+        "time": {
+            "tz": "-07:00",
+            "stime": "2019-04-23 23:00:00",
+            "vtime": 1556085600
+        },
+        "station": {
+            "name": "Shady Cove, Oregon, USA",
+            "geo": [
+                42.623225,
+                -122.810158
+            ],
+            "url": "usa/oregon/shady-cove"
+        }
+    },
+    {
+        "uid": 918,
+        "aqi": "",
+        "time": {
+            "tz": "",
+            "stime": "",
+            "vtime": 0
+        },
+        "station": {
+            "name": "Shajing, Shenzhen",
+            "geo": [
+                0,
+                0
+            ],
+            "url": ""
+        }
+    }
+]
