@@ -20,6 +20,11 @@ class MainViewController: NSViewController {
     }
     
     private func configureCollectionView() {
+        let layout = NSCollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 150, height: 150)
+        layout.minimumInteritemSpacing = 25
+        layout.sectionInset = NSEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        collectionView.collectionViewLayout = layout
         collectionView.register(AQICell.self, forItemWithIdentifier: .aqiCell)
     }
 }
