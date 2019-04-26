@@ -11,6 +11,7 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    var manageCitiesWindow: NSWindowController?
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -21,6 +22,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
-
+    @IBAction func addNew(_ sender: Any) {
+        guard manageCitiesWindow == nil else {
+            manageCitiesWindow?.window?.orderFront(nil)
+            manageCitiesWindow?.window?.makeKey()
+            return
+        }
+        
+        manageCitiesWindow = NSStoryboard.main?.instantiateController(withIdentifier: AppWindows.ManageCitiesWindow.rawValue) as? NSWindowController
+        manageCitiesWindow?.showWindow(nil)
+        manageCitiesWindow?.window?.makeKey()
+    }
+    
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        if !flag {
+            NSApp.windows.filter({ $0.identifier?.rawValue == AppWindows.MainWindow.rawValue }).first?.makeKeyAndOrderFront(self)
+        }
+        return !flag
+    }
 }
 
