@@ -7,16 +7,48 @@
 //
 
 import Cocoa
+import RxSwift
 
 class MainViewController: NSViewController {
 
     @IBOutlet weak var collectionView: NSCollectionView!
+    @IBOutlet weak var noCitiesText: NSTextField!
+    
+    private let viewModel: MainViewModelType = MainViewModel()
+    
+    private var disposeBag: DisposeBag = DisposeBag()
+    
+    fileprivate var aqis: [AQI] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         
+        initSteps()
         configureCollectionView()
+    }
+    
+    private func initSteps() {
+        createUI()
+        bindStyles()
+        bindViewModel()
+    }
+    
+    private func createUI() {
+        
+    }
+    
+    private func bindStyles() {
+        
+    }
+    
+    private func bindViewModel() {
+        viewModel.outputs.aqis.subscribe(onNext: { [weak self] (aqis) in
+            self?.aqis = aqis
+            self?.collectionView.reloadData()
+        }).disposed(by: disposeBag)
+        
+        viewModel.outputs.hideNoCitiesLabel.bind(to: noCitiesText.rx.isHidden).disposed(by: disposeBag)
     }
     
     private func configureCollectionView() {
@@ -31,7 +63,7 @@ class MainViewController: NSViewController {
 
 extension MainViewController: NSCollectionViewDelegate, NSCollectionViewDataSource {
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return aqis.count
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
