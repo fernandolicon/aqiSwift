@@ -15,6 +15,8 @@ class MainViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
+        configureCollectionView()
     }
     
     private func configureCollectionView() {

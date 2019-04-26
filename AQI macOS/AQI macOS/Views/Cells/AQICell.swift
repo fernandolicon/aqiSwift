@@ -19,11 +19,8 @@ class AQICell: NSCollectionViewItem {
     
     private var disposeBag: DisposeBag = DisposeBag()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func loadView() {
         initSteps()
-        view.wantsLayer = true
     }
     
     private func initSteps() {
@@ -33,7 +30,13 @@ class AQICell: NSCollectionViewItem {
     }
     
     private func createUI() {
+        view = NSView()
+        view.wantsLayer = true
+        
         cityNameText = NSTextField()
+        cityNameText.isBezeled = false
+        cityNameText.isEditable = false
+        cityNameText.backgroundColor = NSColor.clear
         cityNameText.alignment = .center
         view.addSubview(cityNameText)
         cityNameText.snp.makeConstraints { (make) in
@@ -41,12 +44,18 @@ class AQICell: NSCollectionViewItem {
         }
         
         qualityText = NSTextField()
+        qualityText.backgroundColor = NSColor.clear
+        qualityText.isBezeled = false
+        qualityText.isEditable = false
         view.addSubview(qualityText)
         qualityText.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
         }
         
         qualityDescriptionText = NSTextField()
+        qualityDescriptionText.backgroundColor = NSColor.clear
+        qualityDescriptionText.isBezeled = false
+        qualityDescriptionText.isEditable = false
         qualityDescriptionText.alignment = .center
         qualityDescriptionText.maximumNumberOfLines = 0
         view.addSubview(qualityDescriptionText)
