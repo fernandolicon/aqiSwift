@@ -34,6 +34,7 @@ class AQICell: NSCollectionViewItem {
         view.wantsLayer = true
         
         cityNameText = NSTextField()
+        cityNameText.textColor = NSColor.white
         cityNameText.isBezeled = false
         cityNameText.isEditable = false
         cityNameText.backgroundColor = NSColor.clear
@@ -44,6 +45,7 @@ class AQICell: NSCollectionViewItem {
         }
         
         qualityText = NSTextField()
+        qualityText.textColor = NSColor.white
         qualityText.backgroundColor = NSColor.clear
         qualityText.isBezeled = false
         qualityText.isEditable = false
@@ -53,6 +55,7 @@ class AQICell: NSCollectionViewItem {
         }
         
         qualityDescriptionText = NSTextField()
+        qualityDescriptionText.textColor = NSColor.white
         qualityDescriptionText.backgroundColor = NSColor.clear
         qualityDescriptionText.isBezeled = false
         qualityDescriptionText.isEditable = false

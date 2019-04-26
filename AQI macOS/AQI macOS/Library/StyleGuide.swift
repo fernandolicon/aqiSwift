@@ -10,24 +10,24 @@ import Foundation
 import Cocoa
 
 extension NSColor {
-    //rgb(192, 57, 43)
+    //rgb(235, 47, 6)
     static var flatDarkRed: NSColor {
-        return NSColor(red: 192/255, green: 57/255, blue: 43/255, alpha: 1.0)
+        return NSColor(red: 235/255, green: 47/255, blue: 47/255, alpha: 1.0)
     }
     
-    //rgb(46, 204, 113)
+    //rgb(76, 209, 55)
     static var flatGreen: NSColor{
-      return NSColor(red: 46/255, green: 204/255, blue: 113/255, alpha: 1.0)
+      return NSColor(red: 76/255, green: 209/255, blue: 55/255, alpha: 1.0)
     }
     
-    //rgb(183,28,28)
+    //rgb(139,0,139)
     static var flatMagenta: NSColor {
-        return NSColor(red: 183/255, green: 28/255, blue: 28/255, alpha: 1.0)
+        return NSColor(red: 145/255, green: 26/255, blue: 48/255, alpha: 1.0)
     }
     
-    //rgb(243, 156, 18)
+    //rgb(240, 147, 43)
     static var flatOrange: NSColor {
-        return NSColor(red: 243/255, green: 156/255, blue: 18/255, alpha: 1.0)
+        return NSColor(red: 240/255, green: 147/255, blue: 43/255, alpha: 1.0)
     }
     
     //rgb(142,36,170)
@@ -35,8 +35,8 @@ extension NSColor {
         return NSColor(red: 142/255, green: 36/255, blue: 170/255, alpha: 1.0)
     }
     
-    //rgb(241, 196, 15)
+    //rgb(251, 197, 49)
     static var flatYellow: NSColor {
-        return NSColor(red: 241/255, green: 196/255, blue: 15/255, alpha: 1.0)
+        return NSColor(red: 251/255, green: 197/255, blue: 49/255, alpha: 1.0)
     }
 }
