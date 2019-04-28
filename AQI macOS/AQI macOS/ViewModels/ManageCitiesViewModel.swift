@@ -15,8 +15,6 @@ protocol ManageCitiesViewModelType {
 }
 
 protocol ManageCitiesViewModelInputs {
-    var addCity: AnyObserver<Void> { get }
-    
     var removeCity: AnyObserver<Void> { get }
 }
 
@@ -29,7 +27,6 @@ protocol ManageCitiesViewModelOutputs {
 
 class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInputs, ManageCitiesViewModelOutputs {
     // Inputs
-    let addCity: AnyObserver<Void>
     let removeCity: AnyObserver<Void>
     
     // Outputs
@@ -37,13 +34,10 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
     let isRemovedEnabled: Observable<Bool>
     
     // Subjects
-    private let addSubject: PublishSubject<Void> = PublishSubject<Void>()
     private let removeSubject: PublishSubject<Void> = PublishSubject<Void>()
     private let citiesSubject: BehaviorSubject<[City]> = BehaviorSubject<[City]>(value: Array(DBManager.shared.cities))
     init() {
         // Inputs
-        addCity = addSubject.asObserver()
-        
         removeCity = removeSubject.asObserver()
         
         // Outputs

@@ -12,9 +12,10 @@ import RxGesture
 
 class ManageCitiesViewController: NSViewController {
 
-    @IBOutlet weak var tableView: NSScrollView!
-    @IBOutlet weak var addButton: NSButton!
-    @IBOutlet weak var removeButton: NSButton!
+    @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var searchBar: NSSearchField!
+    @IBOutlet weak var searchTableView: NSTableView!
+    @IBOutlet weak var searchContainerView: NSScrollView!
     
     private let viewModel: ManageCitiesViewModelType = ManageCitiesViewModel()
     private var disposeBag: DisposeBag = DisposeBag()
@@ -26,17 +27,46 @@ class ManageCitiesViewController: NSViewController {
     }
     
     private func initSteps() {
+        createUI()
         bindViewModel()
         bindGestures()
     }
     
+    private func createUI() {
+        searchTableView.layer?.borderColor = NSColor.lightGray.cgColor
+        searchTableView.layer?.borderWidth = 1
+        searchContainerView.isHidden = true
+    }
+    
     private func bindViewModel() {
-        viewModel.outputs.isRemovedEnabled.bind(to: removeButton.rx.isEnabled).disposed(by: disposeBag)
+        
     }
     
     private func bindGestures() {
-        addButton.rx.leftClickGesture().when(.recognized).map({_ in}).bind(to: viewModel.inputs.addCity).disposed(by: disposeBag)
         
-        removeButton.rx.leftClickGesture().when(.recognized).map({_ in}).bind(to: viewModel.inputs.removeCity).disposed(by: disposeBag)
+    }
+}
+
+extension ManageCitiesViewController: NSSearchFieldDelegate {
+    func searchFieldDidStartSearching(_ sender: NSSearchField) {
+        searchContainerView.alphaValue = 0.0
+        searchContainerView.isHidden = false
+        NSAnimationContext.runAnimationGroup { (context) in
+            context.duration = 0.3
+            context.allowsImplicitAnimation = true
+            context.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
+            self.searchContainerView.animator().alphaValue = 1.0
+        }
+    }
+    
+    func searchFieldDidEndSearching(_ sender: NSSearchField) {
+        NSAnimationContext.runAnimationGroup({ (context) in
+            context.duration = 0.3
+            context.allowsImplicitAnimation = true
+            context.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
+            self.searchContainerView.animator().alphaValue = 0.0
+        }) {
+            self.searchContainerView.isHidden = true
+        }
     }
 }
