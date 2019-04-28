@@ -317,6 +317,11 @@
                             <constraint firstAttribute="bottom" secondItem="CBt-dN-JNi" secondAttribute="bottom" constant="10" id="mcg-fs-3Eo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="493-d8-Dtm" id="lWc-OJ-k0z"/>
+                        <outlet property="removeButton" destination="QmL-VQ-uPa" id="6pC-VW-Zx8"/>
+                        <outlet property="tableView" destination="Pyr-aO-ycA" id="ADw-po-550"/>
+                    </connections>
                 </viewController>
                 <customObject id="vWi-kA-tuz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

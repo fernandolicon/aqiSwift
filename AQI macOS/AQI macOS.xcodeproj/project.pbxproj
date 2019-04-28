@@ -24,6 +24,8 @@
 		FA135FDF2270147F0081A1D1 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA135FDD2270147E0081A1D1 /* City.swift */; };
 		FA135FE02270147F0081A1D1 /* AQI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA135FDE2270147E0081A1D1 /* AQI.swift */; };
 		FA135FE22270148D0081A1D1 /* AQIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA135FE12270148D0081A1D1 /* AQIService.swift */; };
+		FA2082B522755764009AD325 /* ManageCitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2082B422755764009AD325 /* ManageCitiesViewController.swift */; };
+		FA2082B722755AA7009AD325 /* ManageCitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2082B622755AA7009AD325 /* ManageCitiesViewModel.swift */; };
 		FA404A392271C1EF00BED52D /* NSUserInterfaceItemIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA404A382271C1EF00BED52D /* NSUserInterfaceItemIdentifier.swift */; };
 		FA404A3B2272B19B00BED52D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA404A3A2272B19B00BED52D /* MainViewModel.swift */; };
 		FA404A3D2272E70800BED52D /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA404A3C2272E70800BED52D /* DBManager.swift */; };
@@ -76,6 +78,8 @@
 		FA135FDD2270147E0081A1D1 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		FA135FDE2270147E0081A1D1 /* AQI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQI.swift; sourceTree = "<group>"; };
 		FA135FE12270148D0081A1D1 /* AQIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQIService.swift; sourceTree = "<group>"; };
+		FA2082B422755764009AD325 /* ManageCitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCitiesViewController.swift; sourceTree = "<group>"; };
+		FA2082B622755AA7009AD325 /* ManageCitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCitiesViewModel.swift; sourceTree = "<group>"; };
 		FA404A382271C1EF00BED52D /* NSUserInterfaceItemIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUserInterfaceItemIdentifier.swift; sourceTree = "<group>"; };
 		FA404A3A2272B19B00BED52D /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		FA404A3C2272E70800BED52D /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
@@ -227,6 +231,7 @@
 			children = (
 				FA135FC9226F16BC0081A1D1 /* Cells */,
 				FA135FD8226F1BAA0081A1D1 /* MainViewController.swift */,
+				FA2082B422755764009AD325 /* ManageCitiesViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 			children = (
 				FA933A8A22719DA500D3BAF4 /* Cells */,
 				FA404A3A2272B19B00BED52D /* MainViewModel.swift */,
+				FA2082B622755AA7009AD325 /* ManageCitiesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -417,6 +423,7 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -434,6 +441,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -477,6 +485,7 @@
 				FA0241C0227053D600FEE568 /* PollutionLevel.swift in Sources */,
 				FA0241C22270589F00FEE568 /* StyleGuide.swift in Sources */,
 				FA404A392271C1EF00BED52D /* NSUserInterfaceItemIdentifier.swift in Sources */,
+				FA2082B522755764009AD325 /* ManageCitiesViewController.swift in Sources */,
 				FA135F95226F10F30081A1D1 /* AppDelegate.swift in Sources */,
 				FA135FE02270147F0081A1D1 /* AQI.swift in Sources */,
 				FA933A8C22719DB100D3BAF4 /* AQICellModel.swift in Sources */,
@@ -485,6 +494,7 @@
 				FA135FE22270148D0081A1D1 /* AQIService.swift in Sources */,
 				FA135FD7226F1BA40081A1D1 /* AQICell.swift in Sources */,
 				FA135FD9226F1BAA0081A1D1 /* MainViewController.swift in Sources */,
+				FA2082B722755AA7009AD325 /* ManageCitiesViewModel.swift in Sources */,
 				FA404A3B2272B19B00BED52D /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

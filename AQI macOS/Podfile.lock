@@ -15,6 +15,9 @@ PODS:
   - RxAtomic (4.4.1)
   - RxCocoa (4.4.1):
     - RxSwift (~> 4.0)
+  - RxGesture (2.1.0):
+    - RxCocoa (~> 4.4.0)
+    - RxSwift (~> 4.4.0)
   - RxOptional (3.6.2):
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
@@ -30,6 +33,7 @@ DEPENDENCIES:
   - Moya (<= 12.0.1)
   - RealmSwift
   - RxCocoa (~> 4.0)
+  - RxGesture
   - RxOptional (~> 3.6.0)
   - RxRealm
   - RxSwift (~> 4.0)
@@ -45,6 +49,7 @@ SPEC REPOS:
     - Result
     - RxAtomic
     - RxCocoa
+    - RxGesture
     - RxOptional
     - RxRealm
     - RxSwift
@@ -59,11 +64,12 @@ SPEC CHECKSUMS:
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxAtomic: f8d6adc1ccb87a767811269e4875887bc74dbf19
   RxCocoa: 2f35a76bf8887872e28a1914112395b11b8e0e64
+  RxGesture: 7f6dfb45dbde06e618c24442d38493e3144f2c95
   RxOptional: 80426a0ddbd092573e4c482d8cc13302078c4d5e
   RxRealm: 5379eddd74f8d617ca7681d1f8d144af25b432b0
   RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: aa62613db67ce2600b01cd73a0214135cf543a99
+PODFILE CHECKSUM: 16806888a7ae5855dfd8b64d9942fc4b1c361ee4
 
 COCOAPODS: 1.6.1
