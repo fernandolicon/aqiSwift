@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import Realm
+import RealmSwift
 
-class AQI: RLMObject {
+class AQI: Object {
     var city: City? = nil
     var quality: Int?
     var time: Date?

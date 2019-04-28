@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RxRealm
 
 protocol MainViewModelType {
     var inputs: MainViewModelInputs { get }
@@ -30,7 +31,7 @@ class MainViewModel: MainViewModelType, MainViewModelInputs, MainViewModelOutput
     let aqis: Observable<[AQI]>
     let hideNoCitiesLabel: Observable<Bool>
     
-    private let aqisSubject: PublishSubject<[AQI]> = PublishSubject<[AQI]>()
+    private let aqisSubject: BehaviorSubject<[AQI]> = BehaviorSubject<[AQI]>(value: Array(DBManager.shared.aqi))
     init() {
         aqis = aqisSubject
         

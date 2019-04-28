@@ -7,10 +7,10 @@
 //
 
 import Foundation
-import Realm
+import RealmSwift
 import CoreLocation
 
-class City: RLMObject {
+class City: Object {
     var name: String = ""
     var urlString: String?
     var lat: CLLocationDegrees?
@@ -21,3 +21,5 @@ class City: RLMObject {
         return URL(string: urlString ?? "")
     }
 }
+
+
