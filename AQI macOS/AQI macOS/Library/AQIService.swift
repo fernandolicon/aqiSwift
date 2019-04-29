@@ -39,9 +39,9 @@ extension AQIService: TargetType {
     var task: Task {
         switch self {
         case .search(let string):
-            return .requestParameters(parameters: ["keyword" : string, "apiToken" : apiToken], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["keyword" : string, "token" : apiToken], encoding: URLEncoding.queryString)
         case .getAQI:
-            return .requestParameters(parameters: ["apiToken" : apiToken], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["token" : apiToken], encoding: URLEncoding.queryString)
         }
     }
     

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BaseURL</key>
-	<string>http://api.waqi.info</string>
+	<string>https://api.waqi.info</string>
 	<key>APIToken</key>
 	<string></string>
 </dict>
