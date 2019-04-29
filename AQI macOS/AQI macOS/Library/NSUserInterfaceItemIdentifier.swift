@@ -10,4 +10,5 @@ import Cocoa
 
 extension NSUserInterfaceItemIdentifier {
     static let aqiCell = NSUserInterfaceItemIdentifier("AQICell")
+    static let basicCell = NSUserInterfaceItemIdentifier("CitySearchCell")
 }

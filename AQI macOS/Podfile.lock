@@ -6,6 +6,9 @@ PODS:
   - Moya/Core (12.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 4.0)
+  - Moya/RxSwift (12.0.1):
+    - Moya/Core
+    - RxSwift (~> 4.0)
   - Realm (3.13.1):
     - Realm/Headers (= 3.13.1)
   - Realm/Headers (3.13.1)
@@ -31,6 +34,7 @@ PODS:
 DEPENDENCIES:
   - Marshal
   - Moya (<= 12.0.1)
+  - Moya/RxSwift
   - RealmSwift
   - RxCocoa (~> 4.0)
   - RxGesture
@@ -70,6 +74,6 @@ SPEC CHECKSUMS:
   RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 16806888a7ae5855dfd8b64d9942fc4b1c361ee4
+PODFILE CHECKSUM: 839dc53a26dcb704b30ef9ea8af3aabd7228b878
 
 COCOAPODS: 1.6.1

@@ -8,6 +8,7 @@
 
 import Cocoa
 import RxSwift
+import RxCocoa
 import RxGesture
 
 class ManageCitiesViewController: NSViewController {
@@ -16,6 +17,8 @@ class ManageCitiesViewController: NSViewController {
     @IBOutlet weak var searchBar: NSSearchField!
     @IBOutlet weak var searchTableView: NSTableView!
     @IBOutlet weak var searchContainerView: NSScrollView!
+    
+    private var searchDelegate: CitySearchDelegate!
     
     private let viewModel: ManageCitiesViewModelType = ManageCitiesViewModel()
     private var disposeBag: DisposeBag = DisposeBag()
@@ -36,14 +39,17 @@ class ManageCitiesViewController: NSViewController {
         searchTableView.layer?.borderColor = NSColor.lightGray.cgColor
         searchTableView.layer?.borderWidth = 1
         searchContainerView.isHidden = true
+        
+        searchDelegate = CitySearchDelegate(tableView: searchTableView)
+        searchTableView.delegate = searchDelegate
     }
     
     private func bindViewModel() {
-        
+        viewModel.outputs.citiesFound.bind(to: searchDelegate.rx.cities).disposed(by: disposeBag)
     }
     
     private func bindGestures() {
-        
+
     }
 }
 
@@ -68,5 +74,9 @@ extension ManageCitiesViewController: NSSearchFieldDelegate {
         }) {
             self.searchContainerView.isHidden = true
         }
+    }
+    
+    func controlTextDidChange(_ obj: Notification) {
+        viewModel.inputs.searchKeyword.onNext(searchBar.stringValue)
     }
 }

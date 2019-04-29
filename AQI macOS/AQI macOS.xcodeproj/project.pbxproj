@@ -18,7 +18,6 @@
 		FA135F99226F10F40081A1D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA135F98226F10F40081A1D1 /* Assets.xcassets */; };
 		FA135FA8226F10F40081A1D1 /* AQI_macOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA135FA7226F10F40081A1D1 /* AQI_macOSTests.swift */; };
 		FA135FB3226F10F50081A1D1 /* AQI_macOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA135FB2226F10F50081A1D1 /* AQI_macOSUITests.swift */; };
-		FA135FD1226F1A4A0081A1D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA135FD0226F1A4A0081A1D1 /* Main.storyboard */; };
 		FA135FD7226F1BA40081A1D1 /* AQICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA135FD6226F1BA40081A1D1 /* AQICell.swift */; };
 		FA135FD9226F1BAA0081A1D1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA135FD8226F1BAA0081A1D1 /* MainViewController.swift */; };
 		FA135FDF2270147F0081A1D1 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA135FDD2270147E0081A1D1 /* City.swift */; };
@@ -26,6 +25,8 @@
 		FA135FE22270148D0081A1D1 /* AQIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA135FE12270148D0081A1D1 /* AQIService.swift */; };
 		FA2082B522755764009AD325 /* ManageCitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2082B422755764009AD325 /* ManageCitiesViewController.swift */; };
 		FA2082B722755AA7009AD325 /* ManageCitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2082B622755AA7009AD325 /* ManageCitiesViewModel.swift */; };
+		FA2082BE2275927C009AD325 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2082BD2275927C009AD325 /* Main.storyboard */; };
+		FA3898762276939E0084AD34 /* CitySearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3898752276939E0084AD34 /* CitySearchDelegate.swift */; };
 		FA404A392271C1EF00BED52D /* NSUserInterfaceItemIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA404A382271C1EF00BED52D /* NSUserInterfaceItemIdentifier.swift */; };
 		FA404A3B2272B19B00BED52D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA404A3A2272B19B00BED52D /* MainViewModel.swift */; };
 		FA404A3D2272E70800BED52D /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA404A3C2272E70800BED52D /* DBManager.swift */; };
@@ -72,7 +73,6 @@
 		FA135FAE226F10F50081A1D1 /* AQI macOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AQI macOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA135FB2226F10F50081A1D1 /* AQI_macOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQI_macOSUITests.swift; sourceTree = "<group>"; };
 		FA135FB4226F10F50081A1D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA135FD0226F1A4A0081A1D1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA135FD6226F1BA40081A1D1 /* AQICell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQICell.swift; sourceTree = "<group>"; };
 		FA135FD8226F1BAA0081A1D1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FA135FDD2270147E0081A1D1 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -80,6 +80,8 @@
 		FA135FE12270148D0081A1D1 /* AQIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AQIService.swift; sourceTree = "<group>"; };
 		FA2082B422755764009AD325 /* ManageCitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCitiesViewController.swift; sourceTree = "<group>"; };
 		FA2082B622755AA7009AD325 /* ManageCitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCitiesViewModel.swift; sourceTree = "<group>"; };
+		FA2082BD2275927C009AD325 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA3898752276939E0084AD34 /* CitySearchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchDelegate.swift; sourceTree = "<group>"; };
 		FA404A382271C1EF00BED52D /* NSUserInterfaceItemIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUserInterfaceItemIdentifier.swift; sourceTree = "<group>"; };
 		FA404A3A2272B19B00BED52D /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		FA404A3C2272E70800BED52D /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
@@ -188,7 +190,7 @@
 				FA933A7922719C5400D3BAF4 /* ViewModels */,
 				FA135F94226F10F30081A1D1 /* AppDelegate.swift */,
 				FA135F98226F10F40081A1D1 /* Assets.xcassets */,
-				FA135FD0226F1A4A0081A1D1 /* Main.storyboard */,
+				FA2082BD2275927C009AD325 /* Main.storyboard */,
 				FA135F9D226F10F40081A1D1 /* Info.plist */,
 				FA135F9E226F10F40081A1D1 /* AQI_macOS.entitlements */,
 			);
@@ -247,11 +249,20 @@
 		FA135FDC2270147E0081A1D1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA389877227693AB0084AD34 /* Delegates */,
 				FA135FDE2270147E0081A1D1 /* AQI.swift */,
 				FA135FDD2270147E0081A1D1 /* City.swift */,
 				FA0241BF227053D600FEE568 /* PollutionLevel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FA389877227693AB0084AD34 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				FA3898752276939E0084AD34 /* CitySearchDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		FA933A7922719C5400D3BAF4 /* ViewModels */ = {
@@ -380,11 +391,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2082BE2275927C009AD325 /* Main.storyboard in Resources */,
 				FA135F99226F10F40081A1D1 /* Assets.xcassets in Resources */,
 				FA0241C52270649E00FEE568 /* Localizable.strings in Resources */,
 				FA0241BB227049C900FEE568 /* AQI.json in Resources */,
 				FA0241BE227049EE00FEE568 /* Search.json in Resources */,
-				FA135FD1226F1A4A0081A1D1 /* Main.storyboard in Resources */,
 				FA0241B822701A4D00FEE568 /* APIConfig.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,6 +505,7 @@
 				FA135FE22270148D0081A1D1 /* AQIService.swift in Sources */,
 				FA135FD7226F1BA40081A1D1 /* AQICell.swift in Sources */,
 				FA135FD9226F1BAA0081A1D1 /* MainViewController.swift in Sources */,
+				FA3898762276939E0084AD34 /* CitySearchDelegate.swift in Sources */,
 				FA2082B722755AA7009AD325 /* ManageCitiesViewModel.swift in Sources */,
 				FA404A3B2272B19B00BED52D /* MainViewModel.swift in Sources */,
 			);
