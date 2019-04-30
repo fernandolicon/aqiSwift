@@ -36,12 +36,11 @@ class ManageCitiesViewController: NSViewController {
     }
     
     private func createUI() {
-        searchTableView.layer?.borderColor = NSColor.lightGray.cgColor
-        searchTableView.layer?.borderWidth = 1
-        searchContainerView.isHidden = true
+        searchContainerView.alphaValue = 0.0
         
         searchDelegate = CitySearchDelegate(tableView: searchTableView)
         searchTableView.delegate = searchDelegate
+        searchTableView.dataSource = searchDelegate
     }
     
     private func bindViewModel() {
@@ -49,31 +48,24 @@ class ManageCitiesViewController: NSViewController {
     }
     
     private func bindGestures() {
-
+        
     }
 }
 
 extension ManageCitiesViewController: NSSearchFieldDelegate {
     func searchFieldDidStartSearching(_ sender: NSSearchField) {
-        searchContainerView.alphaValue = 0.0
         searchContainerView.isHidden = false
         NSAnimationContext.runAnimationGroup { (context) in
             context.duration = 0.3
             context.allowsImplicitAnimation = true
             context.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
-            self.searchContainerView.animator().alphaValue = 1.0
+            self.searchContainerView.alphaValue = 1.0
         }
     }
     
     func searchFieldDidEndSearching(_ sender: NSSearchField) {
-        NSAnimationContext.runAnimationGroup({ (context) in
-            context.duration = 0.3
-            context.allowsImplicitAnimation = true
-            context.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
-            self.searchContainerView.animator().alphaValue = 0.0
-        }) {
-            self.searchContainerView.isHidden = true
-        }
+        self.searchContainerView.alphaValue = 0.0
+        self.searchContainerView.isHidden = true
     }
     
     func controlTextDidChange(_ obj: Notification) {

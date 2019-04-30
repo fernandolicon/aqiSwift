@@ -64,9 +64,9 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
                     return []
                 }
                 
+                let cities = aqisDict.compactMap({ $0["station"] as? [String : Any] }).compactMap({ try? City(object: $0) })
                 
-                return []
-                
+                return cities
             })
     }
     

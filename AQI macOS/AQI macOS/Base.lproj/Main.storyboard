@@ -271,14 +271,14 @@
                                     <outlet property="delegate" destination="MDR-tu-lQJ" id="3Zr-Pz-Jjb"/>
                                 </connections>
                             </searchField>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2Y-3d-RtU">
-                                <rect key="frame" x="10" y="197" width="460" height="44"/>
+                            <scrollView hidden="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2Y-3d-RtU">
+                                <rect key="frame" x="10" y="10" width="460" height="231"/>
                                 <clipView key="contentView" id="Qqs-WB-c3f">
-                                    <rect key="frame" x="1" y="1" width="458" height="42"/>
+                                    <rect key="frame" x="1" y="1" width="458" height="229"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="vLJ-bO-dWe">
-                                            <rect key="frame" x="0.0" y="0.0" width="458" height="42"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="458" height="229"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -321,9 +321,6 @@
                                         </tableView>
                                     </subviews>
                                 </clipView>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="KQN-cP-hnh"/>
-                                </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="QSy-1X-lkA">
                                     <rect key="frame" x="1" y="119" width="223" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
@@ -345,6 +342,7 @@
                             <constraint firstItem="e2Y-3d-RtU" firstAttribute="top" secondItem="xi8-SI-bPs" secondAttribute="bottom" id="aNr-wM-8OY"/>
                             <constraint firstAttribute="trailing" secondItem="e2Y-3d-RtU" secondAttribute="trailing" constant="10" id="hPO-hh-DYR"/>
                             <constraint firstItem="xi8-SI-bPs" firstAttribute="top" secondItem="myl-PA-cid" secondAttribute="top" constant="7" id="oqp-Wr-K8T"/>
+                            <constraint firstItem="Pyr-aO-ycA" firstAttribute="bottom" secondItem="e2Y-3d-RtU" secondAttribute="bottom" id="v9C-GA-8fW"/>
                         </constraints>
                     </view>
                     <connections>

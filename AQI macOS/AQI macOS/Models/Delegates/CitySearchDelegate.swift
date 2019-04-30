@@ -21,7 +21,10 @@ class CitySearchDelegate: NSObject, NSTableViewDelegate, NSTableViewDataSource {
     private var disposeBag: DisposeBag = DisposeBag()
     
     init(tableView: NSTableView) {
+        super.init()
+        
         self.tableView = tableView
+        self.internalBindings()
     }
     
     func internalBindings() {
