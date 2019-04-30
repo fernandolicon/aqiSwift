@@ -12,8 +12,8 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     var manageCitiesWindow: NSWindowController?
-
-
+    @IBOutlet weak var deleteButton: NSMenuItem!
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
     }
@@ -32,6 +32,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         manageCitiesWindow = NSStoryboard.main?.instantiateController(withIdentifier: AppWindows.ManageCitiesWindow.rawValue) as? NSWindowController
         manageCitiesWindow?.showWindow(nil)
         manageCitiesWindow?.window?.makeKey()
+    }
+    
+    @IBAction func deleteEntry(_ sender: Any) {
+        
     }
     
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {

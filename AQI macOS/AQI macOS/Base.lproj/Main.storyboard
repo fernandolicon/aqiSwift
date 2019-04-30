@@ -60,6 +60,15 @@
                                                 <action selector="addNew:" target="Voe-Tx-rLC" id="OrZ-Gf-aad"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Delete" hidden="YES" enabled="NO" id="Luh-cX-Y6O">
+                                            <string key="keyEquivalent" base64-UTF8="YES">
+CA
+</string>
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="deleteEntry:" target="Voe-Tx-rLC" id="3EK-UU-n1I"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
                                         <menuItem title="Close" keyEquivalent="w" id="DVo-aG-piG">
                                             <connections>
@@ -143,7 +152,11 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="AQI_macOS" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="AQI_macOS" customModuleProvider="target">
+                    <connections>
+                        <outlet property="deleteButton" destination="Luh-cX-Y6O" id="9dX-ZU-wxr"/>
+                    </connections>
+                </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
