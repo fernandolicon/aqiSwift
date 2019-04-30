@@ -11,7 +11,7 @@ import RealmSwift
 import RxRealm
 
 class DBManager {
-    private let realm: Realm
+    let realm: Realm
     
     let cities: Results<City>
     let aqi: Results<AQI>

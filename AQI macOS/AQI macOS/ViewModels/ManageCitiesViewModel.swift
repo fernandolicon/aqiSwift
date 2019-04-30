@@ -19,6 +19,8 @@ protocol ManageCitiesViewModelInputs {
     var removeCity: AnyObserver<Void> { get }
     
     var searchKeyword: AnyObserver<String> { get }
+    
+    var didSelectCity: AnyObserver<City> { get }
 }
 
 protocol ManageCitiesViewModelOutputs {
@@ -29,27 +31,37 @@ protocol ManageCitiesViewModelOutputs {
     
     /// Get cities found by search string
     var citiesFound: Observable<[City]> { get }
+    
+    /// Rest search when user selected city
+    var resetSearch: Observable<Void> { get }
 }
 
 class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInputs, ManageCitiesViewModelOutputs {
     // Inputs
     let removeCity: AnyObserver<Void>
     let searchKeyword: AnyObserver<String>
+    let didSelectCity: AnyObserver<City>
     
     // Outputs
     let cities: Observable<[City]>
     let isRemovedEnabled: Observable<Bool>
     let citiesFound: Observable<[City]>
+    let resetSearch: Observable<Void>
     
     // Subjects
     private let removeSubject: PublishSubject<Void> = PublishSubject<Void>()
     private let citiesSubject: BehaviorSubject<[City]> = BehaviorSubject<[City]>(value: Array(DBManager.shared.cities))
     private let keywordSubject: PublishSubject<String> = PublishSubject<String>()
+    private let selectedCity: PublishSubject<City> = PublishSubject<City>()
+    
+    private var disposeBag = DisposeBag()
     init() {
         // Inputs
         removeCity = removeSubject.asObserver()
         
         searchKeyword = keywordSubject.asObserver()
+        
+        didSelectCity = selectedCity.asObserver()
         
         // Outputs
         cities = citiesSubject
@@ -68,6 +80,15 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
                 
                 return cities
             })
+        
+        resetSearch = selectedCity.map({_ in})
+        
+        // Internal bindings
+        selectedCity.subscribe(onNext: { (city) in
+            try? DBManager.shared.realm.write {
+                DBManager.shared.realm.add(city)
+            }
+        }).disposed(by: disposeBag)
     }
     
     var inputs: ManageCitiesViewModelInputs { return self }

@@ -45,10 +45,40 @@ class ManageCitiesViewController: NSViewController {
     
     private func bindViewModel() {
         viewModel.outputs.citiesFound.bind(to: searchDelegate.rx.cities).disposed(by: disposeBag)
+        
+        viewModel.outputs.resetSearch
+            .delay(0.4, scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] (_) in
+                self?.searchBar.window?.makeFirstResponder(nil)
+                let finishBlock = { [weak self] in
+                    self?.searchBar.stringValue = ""
+                    self?.searchBar.cell?.accessibilityPerformCancel()
+                }
+                self?.hideSearchTableView(animated: true, finishBlock: finishBlock)
+                
+        }).disposed(by: disposeBag)
     }
     
     private func bindGestures() {
+        searchDelegate.rx.selectedCity.bind(to: viewModel.inputs.didSelectCity).disposed(by: disposeBag)
+    }
+    
+    fileprivate func hideSearchTableView(animated: Bool = false, finishBlock: (()->())? = nil) {
+        guard animated else {
+            searchContainerView.alphaValue = 0.0
+            searchContainerView.isHidden = true
+            return
+        }
         
+        NSAnimationContext.runAnimationGroup({ (context) in
+            context.duration = 0.3
+            context.allowsImplicitAnimation = true
+            context.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
+            self.searchContainerView.alphaValue = 0.0
+        }) {
+            self.searchContainerView.isHidden = true
+            finishBlock?()
+        }
     }
 }
 
@@ -64,11 +94,12 @@ extension ManageCitiesViewController: NSSearchFieldDelegate {
     }
     
     func searchFieldDidEndSearching(_ sender: NSSearchField) {
-        self.searchContainerView.alphaValue = 0.0
-        self.searchContainerView.isHidden = true
+        hideSearchTableView()
     }
     
     func controlTextDidChange(_ obj: Notification) {
+        guard searchBar.stringValue != "" else { return }
+        
         viewModel.inputs.searchKeyword.onNext(searchBar.stringValue)
     }
 }

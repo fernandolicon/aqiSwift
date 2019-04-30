@@ -17,6 +17,7 @@ class CitySearchDelegate: NSObject, NSTableViewDelegate, NSTableViewDataSource {
     
     //RxSwift
     fileprivate let citiesSubject: PublishSubject<[City]> = PublishSubject<[City]>()
+    fileprivate let selectedCity: PublishSubject<City> = PublishSubject<City>()
     
     private var disposeBag: DisposeBag = DisposeBag()
     
@@ -47,11 +48,20 @@ class CitySearchDelegate: NSObject, NSTableViewDelegate, NSTableViewDataSource {
         cell.textField?.stringValue = city.name
         return cell
     }
+    
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        guard let selectedRow = tableView?.selectedRow else { return }
+        selectedCity.onNext(cities[selectedRow])
+    }
 }
 
 extension Reactive where Base: CitySearchDelegate {
     var cities: AnyObserver<[City]> {
         return base.citiesSubject.asObserver()
+    }
+    
+    var selectedCity: Observable<City> {
+        return base.selectedCity
     }
 }
 
