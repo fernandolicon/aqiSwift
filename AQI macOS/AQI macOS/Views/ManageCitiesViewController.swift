@@ -18,6 +18,7 @@ class ManageCitiesViewController: NSViewController {
     @IBOutlet weak var searchTableView: NSTableView!
     @IBOutlet weak var searchContainerView: NSScrollView!
     
+    private var citiesDelegate: CitiesListDelegate!
     private var searchDelegate: CitySearchDelegate!
     
     private let viewModel: ManageCitiesViewModelType = ManageCitiesViewModel()
@@ -38,12 +39,18 @@ class ManageCitiesViewController: NSViewController {
     private func createUI() {
         searchContainerView.alphaValue = 0.0
         
+        citiesDelegate = CitiesListDelegate(tableView: tableView)
+        tableView.delegate = citiesDelegate
+        tableView.dataSource = citiesDelegate
+        
         searchDelegate = CitySearchDelegate(tableView: searchTableView)
         searchTableView.delegate = searchDelegate
         searchTableView.dataSource = searchDelegate
     }
     
     private func bindViewModel() {
+        viewModel.outputs.cities.bind(to: citiesDelegate.rx.cities).disposed(by: disposeBag)
+        
         viewModel.outputs.citiesFound.bind(to: searchDelegate.rx.cities).disposed(by: disposeBag)
         
         viewModel.outputs.resetSearch

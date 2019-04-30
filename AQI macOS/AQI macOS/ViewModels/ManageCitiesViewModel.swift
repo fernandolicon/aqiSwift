@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RxRealm
 import Moya
 
 protocol ManageCitiesViewModelType {
@@ -50,7 +51,6 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
     
     // Subjects
     private let removeSubject: PublishSubject<Void> = PublishSubject<Void>()
-    private let citiesSubject: BehaviorSubject<[City]> = BehaviorSubject<[City]>(value: Array(DBManager.shared.cities))
     private let keywordSubject: PublishSubject<String> = PublishSubject<String>()
     private let selectedCity: PublishSubject<City> = PublishSubject<City>()
     
@@ -64,9 +64,11 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
         didSelectCity = selectedCity.asObserver()
         
         // Outputs
-        cities = citiesSubject
+        let userCities = Observable.collection(from: DBManager.shared.cities).map({ Array($0) }).share(replay: 1, scope: .whileConnected)
         
-        isRemovedEnabled = citiesSubject.map({ $0.count > 0 })
+        cities = userCities
+        
+        isRemovedEnabled = userCities.map({ $0.count > 0 })
 
         citiesFound = keywordSubject.debounce(0.5, scheduler: MainScheduler.instance)
             .flatMap( { AQIProvider.shared.rx.request(AQIService.search($0)) } )
