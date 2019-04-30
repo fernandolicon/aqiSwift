@@ -28,6 +28,10 @@ class City: Object, Unmarshaling {
         
         name = try object.value(for: "name")
         urlString = try object.value(for: "url")
+        if let geoObject = (try? object.any(for: "geo")) as? [NSNumber] {
+            lat = geoObject[0].floatValue
+            long = geoObject[1].floatValue
+        }
     }
     
     required init() {
