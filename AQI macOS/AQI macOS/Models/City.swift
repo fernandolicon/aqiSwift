@@ -13,11 +13,11 @@ import CoreLocation
 import Marshal
 
 class City: Object, Unmarshaling {
-    var name: String = ""
-    var urlString: String = ""
-    var lat: Double = 0.0
-    var long: Double = 0.0
-    var order: Int = 0
+    @objc dynamic var name: String = ""
+    @objc dynamic var urlString: String = ""
+    @objc dynamic var lat: Float = 0.0
+    @objc dynamic var long: Float = 0.0
+    @objc dynamic var order: Int = 0
     
     var url: URL? {
         return URL(string: urlString)
