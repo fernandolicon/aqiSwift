@@ -54,7 +54,7 @@ class AQICellModel: AQICellModelType, AQICellModelInputs, AQICellModelOutputs {
         
         cityName = aqiSubject.map({ $0.city?.name })
         
-        qualityValue = aqiSubject.map({ aqi -> String? in aqi.quality != nil ? "\(aqi.quality!)" : nil }).replaceNilWith("--")
+        qualityValue = aqiSubject.map({ "\($0.quality)" })
         
         qualityDescription = aqiSubject.map({ $0.pollutionLevel.localizedName })
     }

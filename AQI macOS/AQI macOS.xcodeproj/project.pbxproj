@@ -33,6 +33,7 @@
 		FA404A44227309A800BED52D /* AppWindows.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA404A43227309A800BED52D /* AppWindows.swift */; };
 		FA8F4326227826D500857A63 /* CitiesListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F4325227826D500857A63 /* CitiesListDelegate.swift */; };
 		FA933A8C22719DB100D3BAF4 /* AQICellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA933A8B22719DB100D3BAF4 /* AQICellModel.swift */; };
+		FAED3B502280342B00F3FF54 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAED3B4F2280342B00F3FF54 /* DateFormatter+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		FA404A43227309A800BED52D /* AppWindows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindows.swift; sourceTree = "<group>"; };
 		FA8F4325227826D500857A63 /* CitiesListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListDelegate.swift; sourceTree = "<group>"; };
 		FA933A8B22719DB100D3BAF4 /* AQICellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQICellModel.swift; sourceTree = "<group>"; };
+		FAED3B4F2280342B00F3FF54 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,12 +222,13 @@
 		FA135FC0226F11060081A1D1 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				FA7F15682282AEA80065747F /* Extensions */,
 				FA0241B722701A4D00FEE568 /* APIConfig.plist */,
 				FA135FE12270148D0081A1D1 /* AQIService.swift */,
+				FA404A43227309A800BED52D /* AppWindows.swift */,
 				FA404A3C2272E70800BED52D /* DBManager.swift */,
 				FA0241C12270589F00FEE568 /* StyleGuide.swift */,
 				FA404A382271C1EF00BED52D /* NSUserInterfaceItemIdentifier.swift */,
-				FA404A43227309A800BED52D /* AppWindows.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -266,6 +269,14 @@
 				FA8F4325227826D500857A63 /* CitiesListDelegate.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		FA7F15682282AEA80065747F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FAED3B4F2280342B00F3FF54 /* DateFormatter+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FA933A7922719C5400D3BAF4 /* ViewModels */ = {
@@ -499,7 +510,10 @@
 				FA0241C0227053D600FEE568 /* PollutionLevel.swift in Sources */,
 				FA0241C22270589F00FEE568 /* StyleGuide.swift in Sources */,
 				FA8F4326227826D500857A63 /* CitiesListDelegate.swift in Sources */,
+				FAED3B502280342B00F3FF54 /* DateFormatter+Extension.swift in Sources */,
 				FA404A392271C1EF00BED52D /* NSUserInterfaceItemIdentifier.swift in Sources */,
+				FA586C2622783F5C000BF545 /* ManageCitiesWindowController.swift in Sources */,
+				FA586C2A227841DB000BF545 /* MainWindowController.swift in Sources */,
 				FA2082B522755764009AD325 /* ManageCitiesViewController.swift in Sources */,
 				FA135F95226F10F30081A1D1 /* AppDelegate.swift in Sources */,
 				FA135FE02270147F0081A1D1 /* AQI.swift in Sources */,
