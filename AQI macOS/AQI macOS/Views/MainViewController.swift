@@ -67,6 +67,9 @@ extension MainViewController: NSCollectionViewDelegate, NSCollectionViewDataSour
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        return collectionView.makeItem(withIdentifier: .aqiCell, for: indexPath)
+        let cell = collectionView.makeItem(withIdentifier: .aqiCell, for: indexPath) as! AQICell
+        cell.configureWith(aqi: aqis[indexPath.item])
+        
+        return cell
     }
 }

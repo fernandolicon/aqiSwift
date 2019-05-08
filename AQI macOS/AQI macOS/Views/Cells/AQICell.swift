@@ -84,4 +84,8 @@ class AQICell: NSCollectionViewItem {
         
         viewModel.outputs.qualityDescription.bind(to: qualityDescriptionText.rx.text).disposed(by: disposeBag)
     }
+    
+    func configureWith(aqi: AQI) {
+        viewModel.inputs.aqiObserver.onNext(aqi)
+    }
 }

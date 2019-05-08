@@ -31,11 +31,13 @@ class MainViewModel: MainViewModelType, MainViewModelInputs, MainViewModelOutput
     let aqis: Observable<[AQI]>
     let hideNoCitiesLabel: Observable<Bool>
     
-    private let aqisSubject: BehaviorSubject<[AQI]> = BehaviorSubject<[AQI]>(value: Array(DBManager.shared.aqi))
     init() {
         aqis = aqisSubject
+        aqis = Observable.collection(from: DBManager.shared.aqi).map({ Array($0) }).share(replay: 1, scope: .whileConnected)
         
-        hideNoCitiesLabel = aqisSubject.map({ $0.count != 0 })
+        hideNoCitiesLabel = aqis.map({ $0.count != 0 })
+        
+        
     }
     
     var inputs: MainViewModelInputs { return self }
