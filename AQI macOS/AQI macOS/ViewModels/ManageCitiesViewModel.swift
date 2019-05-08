@@ -89,6 +89,8 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
         selectedCity.subscribe(onNext: { (city) in
             try? DBManager.shared.realm.write {
                 DBManager.shared.realm.add(city)
+                // Create empty AQI
+                DBManager.shared.realm.add(AQI(withCity: city))
             }
         }).disposed(by: disposeBag)
     }
