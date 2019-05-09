@@ -47,3 +47,15 @@ class City: Object, Unmarshaling {
     }
 }
 
+func == (lhs: City, rhs: City) -> Bool {
+    return lhs.name == rhs.name && lhs.lat == rhs.lat && lhs.long == rhs.long && lhs.urlString == rhs.urlString
+}
+
+func == (lhs: City, rhs: City?) -> Bool {
+    return lhs.name == rhs?.name && lhs.lat == rhs?.lat && lhs.long == rhs?.long && lhs.urlString == rhs?.urlString
+}
+
+func == (lhs: City?, rhs: City) -> Bool {
+    return lhs?.name == rhs.name && lhs?.lat == rhs.lat && lhs?.long == rhs.long && lhs?.urlString == rhs.urlString
+}
+
