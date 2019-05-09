@@ -32,7 +32,6 @@ class MainViewModel: MainViewModelType, MainViewModelInputs, MainViewModelOutput
     let hideNoCitiesLabel: Observable<Bool>
     
     init() {
-        aqis = aqisSubject
         aqis = Observable.collection(from: DBManager.shared.aqi).map({ Array($0) }).share(replay: 1, scope: .whileConnected)
         
         hideNoCitiesLabel = aqis.map({ $0.count != 0 })
