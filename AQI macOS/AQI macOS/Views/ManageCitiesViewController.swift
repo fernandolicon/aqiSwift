@@ -17,12 +17,15 @@ class ManageCitiesViewController: NSViewController {
     @IBOutlet weak var searchBar: NSSearchField!
     @IBOutlet weak var searchTableView: NSTableView!
     @IBOutlet weak var searchContainerView: NSScrollView!
+    @IBOutlet weak var networkIndicator: NSProgressIndicator!
     
     private var citiesDelegate: CitiesListDelegate!
     private var searchDelegate: CitySearchDelegate!
     
     private let viewModel: ManageCitiesViewModelType = ManageCitiesViewModel()
     private var disposeBag: DisposeBag = DisposeBag()
+    
+    private var hasShownTable = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +65,19 @@ class ManageCitiesViewController: NSViewController {
                     self?.searchBar.cell?.accessibilityPerformCancel()
                 }
                 self?.hideSearchTableView(animated: true, finishBlock: finishBlock)
-                
+        }).disposed(by: disposeBag)
+        
+        viewModel.outputs.hideIndicator.subscribe(onNext: { [weak self] (shouldHide) in
+            guard let `self` = self else { return }
+            if shouldHide {
+                self.networkIndicator.isHidden = true
+                self.networkIndicator.stopAnimation(self)
+            } else {
+                if self.hasShownTable {
+                    self.networkIndicator.startAnimation(self)
+                    self.networkIndicator.isHidden = false
+                }
+            }
         }).disposed(by: disposeBag)
     }
     
@@ -74,6 +89,8 @@ class ManageCitiesViewController: NSViewController {
         guard animated else {
             searchContainerView.alphaValue = 0.0
             searchContainerView.isHidden = true
+            networkIndicator.isHidden = true
+            hasShownTable = false
             return
         }
         
@@ -82,8 +99,11 @@ class ManageCitiesViewController: NSViewController {
             context.allowsImplicitAnimation = true
             context.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
             self.searchContainerView.alphaValue = 0.0
+            self.networkIndicator.isHidden = true
         }) {
             self.searchContainerView.isHidden = true
+            self.networkIndicator.stopAnimation(self)
+            self.hasShownTable = false
             finishBlock?()
         }
     }
@@ -92,11 +112,15 @@ class ManageCitiesViewController: NSViewController {
 extension ManageCitiesViewController: NSSearchFieldDelegate {
     func searchFieldDidStartSearching(_ sender: NSSearchField) {
         searchContainerView.isHidden = false
-        NSAnimationContext.runAnimationGroup { (context) in
+        networkIndicator.startAnimation(self)
+        NSAnimationContext.runAnimationGroup({ (context) in
             context.duration = 0.3
             context.allowsImplicitAnimation = true
             context.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
             self.searchContainerView.alphaValue = 1.0
+            self.networkIndicator.isHidden = false
+        }) {
+            self.hasShownTable = true
         }
     }
     

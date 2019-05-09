@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -97,7 +97,7 @@ CA
                                         <menuItem title="Show Sidebar" keyEquivalent="s" id="kIP-vf-haE">
                                             <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
                                             <connections>
-                                                <action selector="toggleSourceList:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
+                                                <action selector="toggleSidebar:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Enter Full Screen" keyEquivalent="f" id="4J7-dP-txa">
@@ -347,8 +347,12 @@ CA
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="VVI-Cb-WBu">
+                                <rect key="frame" x="232" y="211" width="16" height="16"/>
+                            </progressIndicator>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="VVI-Cb-WBu" firstAttribute="centerY" secondItem="e2Y-3d-RtU" secondAttribute="centerY" id="1gx-mH-UrQ"/>
                             <constraint firstItem="Pyr-aO-ycA" firstAttribute="leading" secondItem="myl-PA-cid" secondAttribute="leading" constant="10" id="3Zt-Ym-D0W"/>
                             <constraint firstItem="Pyr-aO-ycA" firstAttribute="top" secondItem="xi8-SI-bPs" secondAttribute="bottom" constant="8" id="5aB-nR-jhw"/>
                             <constraint firstItem="xi8-SI-bPs" firstAttribute="trailing" secondItem="Pyr-aO-ycA" secondAttribute="trailing" id="FYw-JH-Ozd"/>
@@ -360,9 +364,11 @@ CA
                             <constraint firstAttribute="trailing" secondItem="e2Y-3d-RtU" secondAttribute="trailing" constant="10" id="hPO-hh-DYR"/>
                             <constraint firstItem="xi8-SI-bPs" firstAttribute="top" secondItem="myl-PA-cid" secondAttribute="top" constant="7" id="oqp-Wr-K8T"/>
                             <constraint firstItem="Pyr-aO-ycA" firstAttribute="bottom" secondItem="e2Y-3d-RtU" secondAttribute="bottom" id="v9C-GA-8fW"/>
+                            <constraint firstItem="VVI-Cb-WBu" firstAttribute="centerX" secondItem="e2Y-3d-RtU" secondAttribute="centerX" id="yHr-gm-XQM"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="networkIndicator" destination="VVI-Cb-WBu" id="se3-LJ-N1w"/>
                         <outlet property="searchBar" destination="xi8-SI-bPs" id="U59-6r-Taj"/>
                         <outlet property="searchContainerView" destination="e2Y-3d-RtU" id="DZT-cY-tWp"/>
                         <outlet property="searchTableView" destination="vLJ-bO-dWe" id="m3x-2P-eOZ"/>
@@ -383,7 +389,7 @@ CA
                         <subviews>
                             <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="242-WH-wIp">
                                 <rect key="frame" x="20" y="20" width="440" height="230"/>
-                                <clipView key="contentView" drawsBackground="NO" id="pP7-mq-hm7">
+                                <clipView key="contentView" id="pP7-mq-hm7">
                                     <rect key="frame" x="1" y="1" width="438" height="228"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>

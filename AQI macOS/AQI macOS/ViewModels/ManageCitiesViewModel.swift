@@ -27,14 +27,14 @@ protocol ManageCitiesViewModelInputs {
 protocol ManageCitiesViewModelOutputs {
     var cities: Observable<[City]> { get }
     
-    /// Returns a boolean value based on if there are available cities or not
-    var isRemovedEnabled: Observable<Bool> { get }
-    
     /// Get cities found by search string
     var citiesFound: Observable<[City]> { get }
     
     /// Rest search when user selected city
     var resetSearch: Observable<Void> { get }
+
+    /// Hide network indicator while loading data
+    var hideIndicator: Observable<Bool> { get }
 }
 
 class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInputs, ManageCitiesViewModelOutputs {
@@ -45,9 +45,9 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
     
     // Outputs
     let cities: Observable<[City]>
-    let isRemovedEnabled: Observable<Bool>
     let citiesFound: Observable<[City]>
     let resetSearch: Observable<Void>
+    let hideIndicator: Observable<Bool>
     
     // Subjects
     private let removeSubject: PublishSubject<Void> = PublishSubject<Void>()
@@ -67,23 +67,29 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
         let userCities = Observable.collection(from: DBManager.shared.cities).map({ Array($0) }).share(replay: 1, scope: .whileConnected)
         
         cities = userCities
-        
-        isRemovedEnabled = userCities.map({ $0.count > 0 })
 
-        citiesFound = keywordSubject.debounce(0.5, scheduler: MainScheduler.instance)
+        let citiesRequest = keywordSubject.debounce(0.5, scheduler: MainScheduler.instance)
             .flatMap( { AQIProvider.shared.rx.request(AQIService.search($0)) } )
             .map({ (response) -> [City] in
                 guard let responseDict = try? response.mapJSON() as? [String : Any],
-                let aqisDict = responseDict?["data"] as? [[String : Any]] else {
-                    return []
+                    let aqisDict = responseDict?["data"] as? [[String : Any]] else {
+                        return []
                 }
                 
                 let cities = aqisDict.compactMap({ $0["station"] as? [String : Any] }).compactMap({ try? City(object: $0) })
                 
                 return cities
-            })
+            }).share()
+        
+        // Reset current cities list and request a search
+        citiesFound = Observable.merge(keywordSubject.map({_ in [] }),
+                                        citiesRequest)
         
         resetSearch = selectedCity.map({_ in})
+        
+        hideIndicator = Observable.merge(citiesRequest.map({_ in true }),
+                                         keywordSubject.map({_ in false}))
+                        .startWith(true)
         
         // Internal bindings
         selectedCity.subscribe(onNext: { (city) in
