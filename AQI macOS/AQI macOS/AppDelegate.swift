@@ -46,5 +46,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         return !flag
     }
+    
+    @IBAction func reload(_ sender: Any) {
+        AQIUpdateManager.shared.reloadData()
+    }
 }
 

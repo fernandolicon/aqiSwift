@@ -27,7 +27,11 @@ class AQIUpdateManager {
     
     private init() {
         bindModel()
-        timer = Timer.scheduledTimer(timeInterval: frequency, target: self, selector: #selector(updateCities), userInfo: nil, repeats: true)
+        timer = frequencyTimer()
+    }
+    
+    private func frequencyTimer() -> Timer {
+        return Timer.scheduledTimer(timeInterval: frequency, target: self, selector: #selector(updateCities), userInfo: nil, repeats: true)
     }
     
     private func bindModel() {
@@ -83,4 +87,11 @@ class AQIUpdateManager {
         }
     }
     
+    func reloadData() {
+        timer?.invalidate()
+        activeRequests.forEach({ $0.value.cancel() })
+        activeRequests.removeAll()
+        updateCities()
+        timer = frequencyTimer()
+    }
 }

@@ -84,7 +84,7 @@ CA
                                     <items>
                                         <menuItem title="Reload" keyEquivalent="r" id="a8U-jB-Ce5">
                                             <connections>
-                                                <action selector="toggleToolbarShown:" target="Ady-hI-5gd" id="V5a-DC-Cmd"/>
+                                                <action selector="reload:" target="Voe-Tx-rLC" id="gst-bN-Onf"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Show Toolbar" keyEquivalent="t" id="snW-S8-Cw5">
