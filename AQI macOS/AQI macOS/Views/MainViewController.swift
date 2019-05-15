@@ -69,6 +69,7 @@ extension MainViewController: NSCollectionViewDelegate, NSCollectionViewDataSour
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         let cell = collectionView.makeItem(withIdentifier: .aqiCell, for: indexPath) as! AQICell
         cell.configureWith(aqi: aqis[indexPath.item])
+        cell.rx.deleteAQI.bind(to: viewModel.inputs.deleteAQIObserver).disposed(by: cell.disposeBag)
         
         return cell
     }

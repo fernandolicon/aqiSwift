@@ -31,4 +31,14 @@ class DBManager {
             fatalError("Couldn't initialize Realm DB: \(error)")
         }
     }
+    
+    /// Delete given AQI and attached city
+    func deleteAQI(_ aqi: AQI) {
+        try? realm.write {
+            if let city = aqi.city {
+                realm.delete(city)
+            }
+            realm.delete(aqi)
+        }
+    }
 }

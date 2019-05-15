@@ -15,9 +15,13 @@ class AQICell: NSCollectionViewItem {
     private var qualityDescriptionText: NSTextField!
     private var cityNameText: NSTextField!
     
-    private let viewModel: AQICellModelType = AQICellModel()
+    fileprivate let viewModel: AQICellModelType = AQICellModel()
     
-    private var disposeBag: DisposeBag = DisposeBag()
+    private var internalDisposeBag: DisposeBag = DisposeBag()
+    private var reusableDisposeBag: DisposeBag = DisposeBag()
+    var disposeBag: DisposeBag {
+        return reusableDisposeBag
+    }
     
     override func loadView() {
         initSteps()
@@ -65,6 +69,10 @@ class AQICell: NSCollectionViewItem {
         qualityDescriptionText.snp.makeConstraints { (make) in
             make.right.bottom.left.equalToSuperview().inset(4)
         }
+        
+        let newMenu = NSMenu()
+        newMenu.insertItem(NSMenuItem(title: NSLocalizedString("Delete", comment: ""), action: #selector(didSelectDelete), keyEquivalent: ""), at: 0)
+        self.view.menu = newMenu
     }
     
     private func bindStyles() {
@@ -76,16 +84,31 @@ class AQICell: NSCollectionViewItem {
     private func bindViewModel() {
         viewModel.outputs.backgroundColor.subscribe(onNext: { [unowned self] (color) in
             self.view.layer?.backgroundColor = color
-        }).disposed(by: disposeBag)
+        }).disposed(by: internalDisposeBag)
         
-        viewModel.outputs.cityName.bind(to: cityNameText.rx.text).disposed(by: disposeBag)
+        viewModel.outputs.cityName.bind(to: cityNameText.rx.text).disposed(by: internalDisposeBag)
         
-        viewModel.outputs.qualityValue.bind(to: qualityText.rx.text).disposed(by: disposeBag)
+        viewModel.outputs.qualityValue.bind(to: qualityText.rx.text).disposed(by: internalDisposeBag)
         
-        viewModel.outputs.qualityDescription.bind(to: qualityDescriptionText.rx.text).disposed(by: disposeBag)
+        viewModel.outputs.qualityDescription.bind(to: qualityDescriptionText.rx.text).disposed(by: internalDisposeBag)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        reusableDisposeBag = DisposeBag()
     }
     
     func configureWith(aqi: AQI) {
         viewModel.inputs.aqiObserver.onNext(aqi)
+    }
+    
+    @objc func didSelectDelete() {
+        viewModel.inputs.deleteObserver.onNext(())
+    }
+}
+
+extension Reactive where Base: AQICell {
+    var deleteAQI: Observable<AQI> {
+        return base.viewModel.outputs.deleteAQI
     }
 }

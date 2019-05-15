@@ -16,7 +16,7 @@ protocol MainViewModelType {
 }
 
 protocol MainViewModelInputs {
-    
+    var deleteAQIObserver: AnyObserver<AQI> { get }
 }
 
 protocol MainViewModelOutputs {
@@ -28,15 +28,31 @@ protocol MainViewModelOutputs {
 }
 
 class MainViewModel: MainViewModelType, MainViewModelInputs, MainViewModelOutputs {
+    // Inputs
+    var deleteAQIObserver: AnyObserver<AQI>
+    
+    // Outputs
     let aqis: Observable<[AQI]>
     let hideNoCitiesLabel: Observable<Bool>
     
+    // Subjects
+    let deleteSubject: PublishSubject<AQI> = PublishSubject<AQI>()
+    
+    let disposeBag = DisposeBag()
+    
     init() {
+        // Inputs
+        deleteAQIObserver = deleteSubject.asObserver()
+        
+        // Outputs
         aqis = Observable.collection(from: DBManager.shared.aqi).map({ Array($0) }).share(replay: 1, scope: .whileConnected)
         
         hideNoCitiesLabel = aqis.map({ $0.count != 0 })
         
-        
+        // Internal bindings
+        deleteSubject.subscribe(onNext: { (aqi) in
+            DBManager.shared.deleteAQI(aqi)
+        }).disposed(by: disposeBag)
     }
     
     var inputs: MainViewModelInputs { return self }

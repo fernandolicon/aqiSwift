@@ -17,6 +17,8 @@ protocol AQICellModelType {
 
 protocol AQICellModelInputs {
     var aqiObserver: AnyObserver<AQI> { get }
+    
+    var deleteObserver: AnyObserver<Void> { get }
 }
 
 protocol AQICellModelOutputs {
@@ -30,24 +32,31 @@ protocol AQICellModelOutputs {
     
     // AQI level text description
     var qualityDescription: Observable<String?> { get }
+    
+    var deleteAQI: Observable<AQI> { get }
 }
 
 class AQICellModel: AQICellModelType, AQICellModelInputs, AQICellModelOutputs {
     // Inputs
     let aqiObserver: AnyObserver<AQI>
+    let deleteObserver: AnyObserver<Void>
     
     // Outputs
     let backgroundColor: Observable<CGColor>
     let cityName: Observable<String?>
     let qualityValue: Observable<String>
     let qualityDescription: Observable<String?>
+    let deleteAQI: Observable<AQI>
     
     // Subjects
-    let aqiSubject: PublishSubject<AQI> = PublishSubject<AQI>()
+    let aqiSubject: ReplaySubject<AQI> = ReplaySubject<AQI>.create(bufferSize: 1)
+    let deleteSubject: PublishSubject<Void> = PublishSubject<Void>()
     
     init() {
         // Inputs
         aqiObserver = aqiSubject.asObserver()
+        
+        deleteObserver = deleteSubject.asObserver()
         
         // Outputs
         backgroundColor = aqiSubject.map({ $0.pollutionLevel.color.cgColor })
@@ -57,6 +66,8 @@ class AQICellModel: AQICellModelType, AQICellModelInputs, AQICellModelOutputs {
         qualityValue = aqiSubject.map({ "\($0.quality)" })
         
         qualityDescription = aqiSubject.map({ $0.pollutionLevel.localizedName })
+        
+        deleteAQI = deleteSubject.withLatestFrom(aqiSubject)
     }
     
     var inputs: AQICellModelInputs { return self }
