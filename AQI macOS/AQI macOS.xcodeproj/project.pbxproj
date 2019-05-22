@@ -32,6 +32,7 @@
 		FA404A3D2272E70800BED52D /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA404A3C2272E70800BED52D /* DBManager.swift */; };
 		FA404A44227309A800BED52D /* AppWindows.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA404A43227309A800BED52D /* AppWindows.swift */; };
 		FA433C9F2293E80700390887 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA433C9E2293E80700390887 /* Array+Extension.swift */; };
+		FA433CA122953C4D00390887 /* ArrayDiffTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA433CA022953C4D00390887 /* ArrayDiffTest.swift */; };
 		FA7F156A2282D01A0065747F /* AQIUpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F15692282D01A0065747F /* AQIUpdateManager.swift */; };
 		FA8F4326227826D500857A63 /* CitiesListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F4325227826D500857A63 /* CitiesListDelegate.swift */; };
 		FA933A8C22719DB100D3BAF4 /* AQICellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA933A8B22719DB100D3BAF4 /* AQICellModel.swift */; };
@@ -91,6 +92,7 @@
 		FA404A3C2272E70800BED52D /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		FA404A43227309A800BED52D /* AppWindows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindows.swift; sourceTree = "<group>"; };
 		FA433C9E2293E80700390887 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		FA433CA022953C4D00390887 /* ArrayDiffTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayDiffTest.swift; sourceTree = "<group>"; };
 		FA7F15692282D01A0065747F /* AQIUpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQIUpdateManager.swift; sourceTree = "<group>"; };
 		FA8F4325227826D500857A63 /* CitiesListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListDelegate.swift; sourceTree = "<group>"; };
 		FA933A8B22719DB100D3BAF4 /* AQICellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQICellModel.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			children = (
 				FA135FA7226F10F40081A1D1 /* AQI_macOSTests.swift */,
 				FA135FA9226F10F40081A1D1 /* Info.plist */,
+				FA433CA022953C4D00390887 /* ArrayDiffTest.swift */,
 			);
 			path = "AQI macOSTests";
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA433CA122953C4D00390887 /* ArrayDiffTest.swift in Sources */,
 				FA135FA8226F10F40081A1D1 /* AQI_macOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
