@@ -49,3 +49,7 @@ class AQI: Object {
         }
     }
 }
+
+func == (lhs: AQI, rhs: AQI) -> Bool {
+    return lhs.city == rhs.city
+}

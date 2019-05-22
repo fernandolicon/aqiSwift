@@ -44,8 +44,24 @@ class MainViewController: NSViewController {
     
     private func bindViewModel() {
         viewModel.outputs.aqis.subscribe(onNext: { [weak self] (aqis) in
-            self?.aqis = aqis
-            self?.collectionView.reloadData()
+            guard let `self` = self else { return }
+            
+            guard self.aqis.count > 0 else {
+                self.aqis = aqis
+                self.collectionView.reloadData()
+                return
+            }
+            
+            let updates = Array.diffArraysOrdered(lhs: self.aqis, rhs: aqis)
+            
+            let removedIndexes = updates.removed.compactMap({ self.aqis.firstIndex(of: $0) }).map({ IndexPath(item: $0, section: 0) })
+            let addedIndexes = updates.added.compactMap({ aqis.firstIndex(of: $0) }).map({ IndexPath(item: $0, section: 0) })
+            self.aqis = aqis
+            
+            self.collectionView.performBatchUpdates({
+                self.collectionView.animator().deleteItems(at: Set(removedIndexes))
+                self.collectionView.animator().insertItems(at: Set(addedIndexes))
+            }, completionHandler: nil)
         }).disposed(by: disposeBag)
         
         viewModel.outputs.hideNoCitiesLabel.bind(to: noCitiesText.rx.isHidden).disposed(by: disposeBag)

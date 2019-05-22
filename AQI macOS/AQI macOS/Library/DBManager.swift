@@ -34,11 +34,12 @@ class DBManager {
     
     /// Delete given AQI and attached city
     func deleteAQI(_ aqi: AQI) {
+        let city = aqi.city
         try? realm.write {
-            if let city = aqi.city {
-                realm.delete(city)
-            }
             realm.delete(aqi)
+            if city != nil {
+                realm.delete(city!)
+            }
         }
     }
 }

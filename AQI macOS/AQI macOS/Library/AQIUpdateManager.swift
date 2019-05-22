@@ -36,16 +36,15 @@ class AQIUpdateManager {
     
     private func bindModel() {
         let cities = Observable.collection(from: DBManager.shared.cities).map({ Array($0) }).share(replay: 1, scope: .whileConnected)
-        
+
         cities.subscribe(onNext: { [unowned self] (cities) in
-            let newCities = cities.filter({ newCity in !self.activeCities.contains(where: { $0 == newCity }) })
-            let removedCities = self.activeCities.filter({ city in !cities.contains(where: { $0 == city }) })
+            let updates = Array.diffArrays(lhs: self.activeCities, rhs: cities)
+            let newCities = updates.added
+            let removedCities = updates.removed
             removedCities.forEach({ city in
                 self.activeRequests[city]?.cancel()
             })
-            
-            self.activeCities.append(contentsOf: newCities)
-            
+
             newCities.forEach({ (city) in
                 // Perform first data request
                 AQIProvider.shared.request(AQIService.getAQI(city: city.urlString), completion: { [weak self] (result) in
@@ -57,6 +56,8 @@ class AQIUpdateManager {
                     }
                 })
             })
+            
+            self.activeCities = cities
         }).disposed(by: disposeBag)
     }
     

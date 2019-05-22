@@ -25,6 +25,9 @@ protocol MainViewModelOutputs {
     
     /// Show or hide placeholder
     var hideNoCitiesLabel: Observable<Bool> { get }
+    
+    /// Remove removed AQI cell
+    var didRemoveAQIatIndex: Observable<Int> { get }
 }
 
 class MainViewModel: MainViewModelType, MainViewModelInputs, MainViewModelOutputs {
@@ -34,6 +37,7 @@ class MainViewModel: MainViewModelType, MainViewModelInputs, MainViewModelOutput
     // Outputs
     let aqis: Observable<[AQI]>
     let hideNoCitiesLabel: Observable<Bool>
+    let didRemoveAQIatIndex: Observable<Int>
     
     // Subjects
     let deleteSubject: PublishSubject<AQI> = PublishSubject<AQI>()
@@ -45,9 +49,11 @@ class MainViewModel: MainViewModelType, MainViewModelInputs, MainViewModelOutput
         deleteAQIObserver = deleteSubject.asObserver()
         
         // Outputs
-        aqis = Observable.collection(from: DBManager.shared.aqi).map({ Array($0) }).share(replay: 1, scope: .whileConnected)
+        aqis = Observable.collection(from: DBManager.shared.aqi).debounce(0.2, scheduler: MainScheduler.instance).map({ Array($0) }).share(replay: 1, scope: .whileConnected)
         
         hideNoCitiesLabel = aqis.map({ $0.count != 0 })
+        
+        didRemoveAQIatIndex = deleteSubject.withLatestFrom(aqis, resultSelector: { $1.firstIndex(of: $0) }).filterNil()
         
         // Internal bindings
         deleteSubject.subscribe(onNext: { (aqi) in
