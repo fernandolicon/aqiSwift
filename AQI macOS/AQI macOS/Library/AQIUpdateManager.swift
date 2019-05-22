@@ -80,7 +80,13 @@ class AQIUpdateManager {
                 return
         }
         
-        guard let aqi = DBManager.shared.aqi.filter({ $0.city == city }).first else { return }
+        var aqi: AQI! = DBManager.shared.aqi.filter({ $0.city == city }).first
+        if aqi == nil {
+            aqi = AQI(withCity: city)
+            try? DBManager.shared.realm.write {
+                DBManager.shared.realm.add(aqi)
+            }
+        }
         
         try? DBManager.shared.realm.write {
             try? aqi.updateAQI(object: aqisDict)
