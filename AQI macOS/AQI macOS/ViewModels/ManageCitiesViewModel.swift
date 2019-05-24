@@ -22,6 +22,9 @@ protocol ManageCitiesViewModelInputs {
     var searchKeyword: AnyObserver<String> { get }
     
     var didSelectCity: AnyObserver<City> { get }
+    
+    /// Listens to city delete actions
+    var deleteCity: AnyObserver<City> { get }
 }
 
 protocol ManageCitiesViewModelOutputs {
@@ -42,6 +45,7 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
     let removeCity: AnyObserver<Void>
     let searchKeyword: AnyObserver<String>
     let didSelectCity: AnyObserver<City>
+    let deleteCity: AnyObserver<City>
     
     // Outputs
     let cities: Observable<[City]>
@@ -53,6 +57,7 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
     private let removeSubject: PublishSubject<Void> = PublishSubject<Void>()
     private let keywordSubject: PublishSubject<String> = PublishSubject<String>()
     private let selectedCity: PublishSubject<City> = PublishSubject<City>()
+    private let deletedCitySubject: PublishSubject<City> = PublishSubject<City>()
     
     private var disposeBag = DisposeBag()
     init() {
@@ -62,6 +67,8 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
         searchKeyword = keywordSubject.asObserver()
         
         didSelectCity = selectedCity.asObserver()
+        
+        deleteCity = deletedCitySubject.asObserver()
         
         // Outputs
         let userCities = Observable.collection(from: DBManager.shared.cities).map({ Array($0) }).share(replay: 1, scope: .whileConnected)
@@ -81,6 +88,7 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
                 return cities
             }).share()
         
+        
         // Reset current cities list and request a search
         citiesFound = Observable.merge(keywordSubject.map({_ in [] }),
                                         citiesRequest)
@@ -98,6 +106,10 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
                 // Create empty AQI
                 DBManager.shared.realm.add(AQI(withCity: city))
             }
+        }).disposed(by: disposeBag)
+        
+        deletedCitySubject.subscribe(onNext: { (city) in
+            DBManager.shared.deleteCity(city)
         }).disposed(by: disposeBag)
     }
     

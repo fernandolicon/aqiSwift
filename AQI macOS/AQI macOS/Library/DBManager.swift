@@ -42,4 +42,15 @@ class DBManager {
             }
         }
     }
+    
+    /// Delete a given city and looks for its parent AQI to delete it.
+    func deleteCity(_ city: City) {
+        let cityAQI = aqi.filter({ $0.city == city }).first
+        try? realm.write {
+            realm.delete(city)
+            if cityAQI != nil {
+                realm.delete(cityAQI!)
+            }
+        }
+    }
 }
