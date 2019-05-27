@@ -107,6 +107,10 @@ class ManageCitiesViewController: NSViewController {
             finishBlock?()
         }
     }
+    
+    @objc fileprivate func didDeleteClicked() {
+        viewModel.inputs.deleteCityIndex.onNext(tableView.clickedRow)
+    }
 }
 
 extension ManageCitiesViewController: NSSearchFieldDelegate {
@@ -132,5 +136,17 @@ extension ManageCitiesViewController: NSSearchFieldDelegate {
         guard searchBar.stringValue != "" else { return }
         
         viewModel.inputs.searchKeyword.onNext(searchBar.stringValue)
+    }
+}
+
+extension ManageCitiesViewController: NSMenuDelegate {
+    func menuNeedsUpdate(_ menu: NSMenu) {
+        menu.removeAllItems()
+        guard tableView.clickedRow >= 0 else {
+            return
+        }
+        
+        let deleteItem = NSMenuItem(title: NSLocalizedString("Delete", comment: ""), action: #selector(didDeleteClicked), keyEquivalent: "")
+        menu.insertItem(deleteItem, at: 0)
     }
 }

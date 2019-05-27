@@ -23,8 +23,8 @@ protocol ManageCitiesViewModelInputs {
     
     var didSelectCity: AnyObserver<City> { get }
     
-    /// Listens to city delete actions
-    var deleteCity: AnyObserver<City> { get }
+    /// Listens to city delete actions, receives the selected index.
+    var deleteCityIndex: AnyObserver<Int> { get }
 }
 
 protocol ManageCitiesViewModelOutputs {
@@ -45,7 +45,7 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
     let removeCity: AnyObserver<Void>
     let searchKeyword: AnyObserver<String>
     let didSelectCity: AnyObserver<City>
-    let deleteCity: AnyObserver<City>
+    let deleteCityIndex: AnyObserver<Int>
     
     // Outputs
     let cities: Observable<[City]>
@@ -57,7 +57,7 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
     private let removeSubject: PublishSubject<Void> = PublishSubject<Void>()
     private let keywordSubject: PublishSubject<String> = PublishSubject<String>()
     private let selectedCity: PublishSubject<City> = PublishSubject<City>()
-    private let deletedCitySubject: PublishSubject<City> = PublishSubject<City>()
+    private let deletedCityIndexSubject: PublishSubject<Int> = PublishSubject<Int>()
     
     private var disposeBag = DisposeBag()
     init() {
@@ -68,7 +68,7 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
         
         didSelectCity = selectedCity.asObserver()
         
-        deleteCity = deletedCitySubject.asObserver()
+        deleteCityIndex = deletedCityIndexSubject.asObserver()
         
         // Outputs
         let userCities = Observable.collection(from: DBManager.shared.cities).map({ Array($0) }).share(replay: 1, scope: .whileConnected)
@@ -108,9 +108,11 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
             }
         }).disposed(by: disposeBag)
         
-        deletedCitySubject.subscribe(onNext: { (city) in
-            DBManager.shared.deleteCity(city)
-        }).disposed(by: disposeBag)
+        deletedCityIndexSubject
+            .withLatestFrom(cities, resultSelector: { $1[$0] })
+            .subscribe(onNext: { (city) in
+                DBManager.shared.deleteCity(city)
+            }).disposed(by: disposeBag)
     }
     
     var inputs: ManageCitiesViewModelInputs { return self }
