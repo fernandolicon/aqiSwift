@@ -523,8 +523,6 @@
 				FA8F4326227826D500857A63 /* CitiesListDelegate.swift in Sources */,
 				FAED3B502280342B00F3FF54 /* DateFormatter+Extension.swift in Sources */,
 				FA404A392271C1EF00BED52D /* NSUserInterfaceItemIdentifier.swift in Sources */,
-				FA586C2622783F5C000BF545 /* ManageCitiesWindowController.swift in Sources */,
-				FA586C2A227841DB000BF545 /* MainWindowController.swift in Sources */,
 				FA2082B522755764009AD325 /* ManageCitiesViewController.swift in Sources */,
 				FA135F95226F10F30081A1D1 /* AppDelegate.swift in Sources */,
 				FA135FE02270147F0081A1D1 /* AQI.swift in Sources */,
