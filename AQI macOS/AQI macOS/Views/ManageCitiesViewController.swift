@@ -27,6 +27,10 @@ class ManageCitiesViewController: NSViewController {
     
     private var hasShownTable = false
     
+    var shouldEnableDelete: Bool {
+        return tableView.selectedRow >= 0
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -106,6 +110,10 @@ class ManageCitiesViewController: NSViewController {
             self.hasShownTable = false
             finishBlock?()
         }
+    }
+    
+    func didDeleteSelected() {
+        viewModel.inputs.deleteCityIndex.onNext(tableView.selectedRow)
     }
     
     @objc fileprivate func didDeleteClicked() {

@@ -12,7 +12,6 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     var manageCitiesWindow: NSWindowController?
-    @IBOutlet weak var deleteButton: NSMenuItem!
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
@@ -37,7 +36,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func deleteEntry(_ sender: Any) {
+        guard let manageCitiesViewController = manageCitiesWindow?.contentViewController as? ManageCitiesViewController else {
+            return
+        }
         
+        manageCitiesViewController.didDeleteSelected()
     }
     
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
@@ -49,6 +52,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBAction func reload(_ sender: Any) {
         AQIUpdateManager.shared.reloadData()
+    }
+}
+
+extension AppDelegate: NSUserInterfaceValidations {
+    func validateUserInterfaceItem(_ item: NSValidatedUserInterfaceItem) -> Bool {
+        switch item.action {
+        case #selector(deleteEntry(_:)):
+            guard NSApplication.shared.keyWindow == manageCitiesWindow?.window,
+                  let manageCitiesViewController = manageCitiesWindow?.contentViewController as? ManageCitiesViewController else {
+                return false
+            }
+            return manageCitiesViewController.shouldEnableDelete
+        default:
+            return true
+        }
     }
 }
 
