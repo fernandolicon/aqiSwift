@@ -87,6 +87,8 @@ class ManageCitiesViewController: NSViewController {
     
     private func bindGestures() {
         searchDelegate.rx.selectedCity.bind(to: viewModel.inputs.didSelectCity).disposed(by: disposeBag)
+        
+        citiesDelegate.rx.didReorderCity.bind(to: viewModel.inputs.didReorderCity).disposed(by: disposeBag)
     }
     
     fileprivate func hideSearchTableView(animated: Bool = false, finishBlock: (()->())? = nil) {

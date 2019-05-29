@@ -25,6 +25,8 @@ protocol ManageCitiesViewModelInputs {
     
     /// Listens to city delete actions, receives the selected index.
     var deleteCityIndex: AnyObserver<Int> { get }
+    
+    var didReorderCity: AnyObserver<CityReordering> { get }
 }
 
 protocol ManageCitiesViewModelOutputs {
@@ -46,6 +48,7 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
     let searchKeyword: AnyObserver<String>
     let didSelectCity: AnyObserver<City>
     let deleteCityIndex: AnyObserver<Int>
+    let didReorderCity: AnyObserver<CityReordering>
     
     // Outputs
     let cities: Observable<[City]>
@@ -58,6 +61,7 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
     private let keywordSubject: PublishSubject<String> = PublishSubject<String>()
     private let selectedCity: PublishSubject<City> = PublishSubject<City>()
     private let deletedCityIndexSubject: PublishSubject<Int> = PublishSubject<Int>()
+    private let reoderCitySubject: PublishSubject<CityReordering> = PublishSubject<CityReordering>()
     
     private var disposeBag = DisposeBag()
     init() {
@@ -69,6 +73,8 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
         didSelectCity = selectedCity.asObserver()
         
         deleteCityIndex = deletedCityIndexSubject.asObserver()
+        
+        didReorderCity = reorderCitySubejct.asObserver()
         
         // Outputs
         let userCities = Observable.collection(from: DBManager.shared.cities).map({ Array($0) }).share(replay: 1, scope: .whileConnected)
