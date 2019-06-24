@@ -66,7 +66,10 @@ class ManageCitiesViewController: NSViewController {
                 self?.searchBar.window?.makeFirstResponder(nil)
                 let finishBlock = { [weak self] in
                     self?.searchBar.stringValue = ""
-                    self?.searchBar.cell?.accessibilityPerformCancel()
+                    if let cancelCell = self?.searchBar.cell as? NSSearchFieldCell,
+                        let cancelButton = cancelCell.cancelButtonCell {
+                        cancelButton.performClick(self)
+                    }
                 }
                 self?.hideSearchTableView(animated: true, finishBlock: finishBlock)
         }).disposed(by: disposeBag)
