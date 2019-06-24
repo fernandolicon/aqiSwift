@@ -61,7 +61,7 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
     private let keywordSubject: PublishSubject<String> = PublishSubject<String>()
     private let selectedCity: PublishSubject<City> = PublishSubject<City>()
     private let deletedCityIndexSubject: PublishSubject<Int> = PublishSubject<Int>()
-    private let reoderCitySubject: PublishSubject<CityReordering> = PublishSubject<CityReordering>()
+    private let reorderCitySubject: PublishSubject<CityReordering> = PublishSubject<CityReordering>()
     
     private var disposeBag = DisposeBag()
     init() {
@@ -74,7 +74,7 @@ class ManageCitiesViewModel: ManageCitiesViewModelType, ManageCitiesViewModelInp
         
         deleteCityIndex = deletedCityIndexSubject.asObserver()
         
-        didReorderCity = reorderCitySubejct.asObserver()
+        didReorderCity = reorderCitySubject.asObserver()
         
         // Outputs
         let userCities = Observable.collection(from: DBManager.shared.cities).map({ Array($0) }).share(replay: 1, scope: .whileConnected)
